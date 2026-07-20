@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Orçamento - Blank Studio | Blank Studio</title>
+    <meta name="description" content="Peça um orçamento grátis e sem compromisso para o seu projeto digital. Websites, SEO, Google Ads e mais.">
+    <meta name="keywords" content="agência digital, desenvolvimento web, SEO, Google Ads, marketing digital, Portugal">
+    <meta name="author" content="Blank Studio">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Pedido de Orçamento - Blank Studio | Blank Studio">
+    <meta property="og:description" content="Peça um orçamento grátis e sem compromisso para o seu projeto digital. Websites, SEO, Google Ads e mais.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://blankstudio.pt/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="Blank Studio">
+        </a>
+        <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay">
+        <div class="menu-content">
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="sobre.html" class="menu-item">Sobre</a>
+            <a href="servicos.html" class="menu-item">Serviços</a>
+            <a href="projetos.html" class="menu-item">Projetos</a>
+            <a href="blog.html" class="menu-item">Blog</a>
+            <a href="contactos.html" class="menu-item">Contactos</a>
+            <div class="menu-cta">
+                <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero hero-sub">
+        <div class="container" style="max-width: 1280px; margin: 0 auto; width: 100%;">
+            <div class="breadcrumb reveal">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span>Pedir Orçamento</span>
+            </div>
+            <h1 class="reveal">Pedir <em>Orçamento</em></h1>
+            <p class="reveal" style="max-width: 600px; margin-top: 20px;">Conte-nos sobre o seu projeto e receba uma proposta personalizada em até 48 horas.</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: white;">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div class="grid grid-2" style="gap: 80px;">
+                <div class="reveal">
+                    <span class="section-label">Como Funciona</span>
+                    <h2 style="margin-bottom: 32px;">O processo é simples</h2>
+
+                    <div class="process-step" style="padding: 20px 0;">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Envie o formulário</h4>
+                            <p>Preenche os dados do seu projeto com o máximo de detalhe possível.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" style="padding: 20px 0;">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Analisamos o projeto</h4>
+                            <p>A nossa equipa avalia as necessidades e prepara uma proposta detalhada.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" style="padding: 20px 0;">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Recebe o orçamento</h4>
+                            <p>Em até 48 horas recebe uma proposta personalizada e sem compromisso.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" style="padding: 20px 0;">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Começamos a trabalhar</h4>
+                            <p>Após aprovação, iniciamos o projeto com acompanhamento próximo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal" style="transition-delay: 0.2s">
+                    <div style="background: var(--bg); border-radius: 24px; padding: 40px;">
+                        <h3 style="margin-bottom: 32px;">Dados do Projeto</h3>
+                        <form data-validate>
+                            <div class="form-group">
+                                <label>Nome *</label>
+                                <input type="text" placeholder="O seu nome completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" placeholder="o.seu@email.pt" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone *</label>
+                                <input type="tel" placeholder="+351 000 000 000" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nome da Empresa</label>
+                                <input type="text" placeholder="Nome da sua empresa">
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo de Projeto *</label>
+                                <select required>
+                                    <option value="">Selecione...</option>
+                                    <option value="website">Website Institucional</option>
+                                    <option value="ecommerce">Loja Online (E-commerce)</option>
+                                    <option value="landing">Landing Page</option>
+                                    <option value="seo">SEO</option>
+                                    <option value="google-ads">Google Ads</option>
+                                    <option value="google-business">Google Business Profile</option>
+                                    <option value="manutencao">Manutenção</option>
+                                    <option value="branding">Design & Branding</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Orçamento Aproximado</label>
+                                <select>
+                                    <option value="">Selecione...</option>
+                                    <option value="1500-3000">1.500€ - 3.000€</option>
+                                    <option value="3000-5000">3.000€ - 5.000€</option>
+                                    <option value="5000-10000">5.000€ - 10.000€</option>
+                                    <option value="10000+">+ 10.000€</option>
+                                    <option value="nao-sei">Ainda não sei</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Descrição do Projeto *</label>
+                                <textarea placeholder="Conte-nos mais sobre o seu projeto, objetivos e expectativas..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Enviar Pedido de Orçamento</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid" style="max-width: 1280px; margin: 0 auto; padding: 0 40px;">
+            <div class="footer-brand">
+                <img src="images/logo.svg" alt="Blank Studio">
+                <p>Transformamos ideias em experiências digitais memoráveis. A sua agência de confiança para web, SEO e marketing digital em Portugal.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">f</a>
+                    <a href="#" class="social-link" aria-label="Instagram">i</a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    <a href="#" class="social-link" aria-label="Twitter">x</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="desenvolvimento-web.html">Desenvolvimento Web</a></li>
+                    <li><a href="seo.html">SEO</a></li>
+                    <li><a href="google-ads.html">Google Ads</a></li>
+                    <li><a href="google-business.html">Google Business</a></li>
+                    <li><a href="manutencao.html">Manutenção</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="termos.html">Termos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="max-width: 1280px; margin: 0 auto; padding: 24px 40px 0;">
+            <p>&copy; 2026 Blank Studio. Todos os direitos reservados.</p>
+            <p>Desenhado com paixão em Portugal</p>
+        </div>
+    </footer>    <!-- Cookie Banner -->
+    <div class="cookie-banner">
+        <div class="cookie-banner-inner">
+            <p>Utilizamos cookies para melhorar a sua experiência. Ao continuar, concorda com a nossa <a href="cookies.html">Política de Cookies</a>.</p>
+            <div style="display: flex; gap: 12px;">
+                <button class="btn btn-outline btn-sm cookie-decline">Recusar</button>
+                <button class="btn btn-primary btn-sm cookie-accept">Aceitar</button>
+            </div>
+        </div>
+    </div>    <button class="back-to-top" aria-label="Voltar ao topo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>    <script src="js/main.js"></script>
+</body>
+</html>
