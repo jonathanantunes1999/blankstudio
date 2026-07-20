@@ -21,6 +21,15 @@
     <link rel="apple-touch-icon" href="images/favicon/favicon-180.png">
 </head>
 <body>
+    <!-- Splashscreen -->
+    <div class="splashscreen">
+        <div class="splash-logo"><img src="images/logo.svg" alt="Blank Studio"></div>
+        <div class="splash-hint">
+            <span class="splash-dot"></span>
+            <span>A carregar</span>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo">
@@ -57,6 +66,7 @@
     </div>
 
     <section class="hero hero-sub">
+        <div class="hero-shape" data-parallax="0.1" aria-hidden="true"></div>
         <div class="container" style="max-width: 1280px; margin: 0 auto; width: 100%;">
             <div class="breadcrumb reveal">
                 <a href="index.html">Home</a>
@@ -68,35 +78,38 @@
         </div>
     </section>
 
-    <section class="section" style="background: white;">
+    <!-- Manifesto -->
+    <section class="manifesto" style="background: white;">
         <div class="container" style="max-width: 1280px; margin: 0 auto;">
-            <div class="grid grid-2" style="align-items: center; gap: 80px;">
-                <div class="reveal">
+            <div class="manifesto-grid">
+                <div class="manifesto-text reveal">
                     <span class="section-label">A Nossa Missão</span>
-                    <h2 style="margin-bottom: 24px;">Criar o futuro digital dos nossos clientes</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-light);">Fundada em 2018, a Blank Studio nasceu com um propósito claro: ajudar empresas portuguesas a prosperar no mundo digital.</p>
-                    <p style="margin-bottom: 20px; color: var(--text-light);">A nossa equipa multidisciplinar combina expertise em design, desenvolvimento, SEO e marketing digital.</p>
-                    <p style="color: var(--text-light);">Cada projeto é único. Não fazemos templates genéricos — criamos experiências personalizadas.</p>
-                </div>
-                <div class="reveal" style="transition-delay: 0.2s">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                        <div style="background: var(--bg); border-radius: 20px; padding: 32px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">150+</div>
-                            <p style="font-size: 0.875rem; color: var(--text-light);">Projetos</p>
+                    <h2>Criar o futuro digital dos nossos clientes</h2>
+                    <p>Fundada em 2018, a Blank Studio nasceu com um propósito claro: ajudar empresas portuguesas a prosperar no mundo digital, partindo sempre de uma tela em branco.</p>
+                    <p>A nossa equipa multidisciplinar combina expertise em design, desenvolvimento, SEO e marketing digital. Cada projeto é único — não fazemos templates genéricos, criamos experiências personalizadas.</p>
+                    <div class="manifesto-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="150">0</div>
+                            <div class="stat-label">Projetos</div>
                         </div>
-                        <div style="background: var(--bg); border-radius: 20px; padding: 32px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">50+</div>
-                            <p style="font-size: 0.875rem; color: var(--text-light);">Clientes</p>
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="50">0</div>
+                            <div class="stat-label">Clientes</div>
                         </div>
-                        <div style="background: var(--bg); border-radius: 20px; padding: 32px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">8</div>
-                            <p style="font-size: 0.875rem; color: var(--text-light);">Anos</p>
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="8">0</div>
+                            <div class="stat-label">Anos</div>
                         </div>
-                        <div style="background: var(--bg); border-radius: 20px; padding: 32px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent);">12</div>
-                            <p style="font-size: 0.875rem; color: var(--text-light);">Elementos</p>
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="12">0</div>
+                            <div class="stat-label">Elementos</div>
                         </div>
                     </div>
+                </div>
+                <div class="manifesto-visual reveal" style="transition-delay: 0.2s" aria-hidden="true">
+                    <div class="manifesto-canvas"></div>
+                    <div class="manifesto-blob" data-parallax="0.1"></div>
+                    <div class="manifesto-mark" data-parallax="-0.15"></div>
                 </div>
             </div>
         </div>
@@ -109,23 +122,23 @@
                 <h2>Quem está por detrás da Blank Studio</h2>
             </div>
             <div class="grid grid-4">
-                <div class="reveal" style="text-align: center;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #f7931e); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: white;">AM</div>
+                <div class="team-member reveal" style="text-align: center;">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, var(--accent), #ff8f7a);">AM</div>
                     <h4 style="margin-bottom: 4px;">André Martins</h4>
                     <p style="font-size: 0.875rem; color: var(--accent);">CEO & Fundador</p>
                 </div>
-                <div class="reveal" style="text-align: center; transition-delay: 0.1s;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: white;">CS</div>
+                <div class="team-member reveal" style="text-align: center; transition-delay: 0.1s;">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">CS</div>
                     <h4 style="margin-bottom: 4px;">Carla Santos</h4>
                     <p style="font-size: 0.875rem; color: var(--accent);">Diretora Criativa</p>
                 </div>
-                <div class="reveal" style="text-align: center; transition-delay: 0.2s;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #11998e, #38ef7d); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: white;">RL</div>
+                <div class="team-member reveal" style="text-align: center; transition-delay: 0.2s;">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #11998e, #38ef7d);">RL</div>
                     <h4 style="margin-bottom: 4px;">Ricardo Lima</h4>
                     <p style="font-size: 0.875rem; color: var(--accent);">Lead Developer</p>
                 </div>
-                <div class="reveal" style="text-align: center; transition-delay: 0.3s;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #fc4a1a, #f7b733); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: white;">MF</div>
+                <div class="team-member reveal" style="text-align: center; transition-delay: 0.3s;">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #fc4a1a, #f7b733);">MF</div>
                     <h4 style="margin-bottom: 4px;">Mariana Ferreira</h4>
                     <p style="font-size: 0.875rem; color: var(--accent);">Especialista SEO</p>
                 </div>
@@ -133,18 +146,15 @@
         </div>
     </section>
 
-    <section class="section" style="background: white; text-align: center;">
-        <div class="container" style="max-width: 700px; margin: 0 auto;">
-            <div class="reveal">
-                <h2 style="margin-bottom: 20px;">Quer fazer parte desta história?</h2>
-                <p style="margin-bottom: 32px; color: var(--text-light);">Junte-se aos mais de 150 clientes que já confiaram na Blank Studio.</p>
-                <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-cta reveal">
+            <div>
+                <h2>Quer fazer parte desta história?</h2>
+                <p>Junte-se aos mais de 150 clientes que já confiaram na Blank Studio.</p>
+            </div>
+            <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento</a>
+        </div>
         <div class="footer-grid" style="max-width: 1280px; margin: 0 auto 60px; padding: 0 40px;">
             <div class="footer-brand">
                 <img src="images/logo.svg" alt="Blank Studio">

@@ -1152,6 +1152,13 @@ textarea { min-height: 140px; resize: vertical; }
     line-height: 1.1;
     max-width: 640px;
 }
+.footer-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-top: 16px;
+}
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -1299,6 +1306,24 @@ body.has-cursor-dot .quote-dot {
     padding: 160px 40px 80px;
 }
 .hero-sub h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+
+/* ===== TEAM ===== */
+.team-member { transition: transform 0.4s var(--transition); }
+.team-member:hover { transform: translateY(-6px); }
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    transition: box-shadow 0.4s var(--transition);
+}
+.team-member:hover .team-avatar { box-shadow: 0 20px 40px -12px rgba(0,0,0,0.3); }
 
 /* ===== FILTER BUTTONS ===== */
 .filter-buttons {
