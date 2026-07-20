@@ -67,9 +67,15 @@ function initCursorDot() {
     document.addEventListener('mousedown', () => dot.classList.add('pressed'));
     document.addEventListener('mouseup', () => dot.classList.remove('pressed'));
 
-    function render() {
-        dotX += (mouseX - dotX) * 0.18;
-        dotY += (mouseY - dotY) * 0.18;
+    let lastTime = performance.now();
+
+    function render(now) {
+        const dt = Math.min(now - lastTime, 50); // clamp to avoid jumps after tab is backgrounded
+        lastTime = now;
+        // Frame-rate independent smoothing: ~0.55 catch-up per 16.7ms frame
+        const ease = 1 - Math.pow(1 - 0.55, dt / 16.7);
+        dotX += (mouseX - dotX) * ease;
+        dotY += (mouseY - dotY) * ease;
         dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
         requestAnimationFrame(render);
     }
