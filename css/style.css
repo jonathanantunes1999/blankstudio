@@ -1129,13 +1129,14 @@ textarea { min-height: 140px; resize: vertical; }
 .footer {
     background: var(--text);
     color: white;
-    /* Extra bottom padding keeps footer-bottom clear of the fixed cookie banner at full scroll */
-    padding: 0 40px 130px;
+    /* Top padding keeps pages without .footer-cta from looking cramped;
+       extra bottom padding keeps footer-bottom clear of the fixed cookie banner at full scroll */
+    padding: 80px 40px 130px;
 }
 .footer-cta {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 120px 0;
+    padding: 40px 0 100px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     margin-bottom: 60px;
     display: flex;
