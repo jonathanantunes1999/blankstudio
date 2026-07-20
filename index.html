@@ -21,6 +21,15 @@
     <link rel="apple-touch-icon" href="images/favicon/favicon-180.png">
 </head>
 <body>
+    <!-- Splashscreen -->
+    <div class="splashscreen">
+        <div class="splash-logo"><img src="images/logo.svg" alt="Blank Studio"></div>
+        <div class="splash-hint">
+            <span class="splash-dot"></span>
+            <span>A carregar</span>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo">
@@ -58,229 +67,220 @@
 
     <!-- Hero -->
     <section class="hero">
+        <div class="hero-shape" data-parallax="0.12" aria-hidden="true"></div>
+        <div class="hero-shape--ring" data-parallax="-0.08" aria-hidden="true"></div>
         <div class="container" style="max-width: 1280px; margin: 0 auto; width: 100%;">
             <div class="hero-content">
                 <span class="hero-label reveal">Agência Digital em Portugal</span>
                 <h1 class="reveal" style="transition-delay: 0.1s">
-                    Transformamos ideias em <em>experiências digitais</em> memoráveis
+                    Começamos em <em>branco</em>. Terminamos em <em>impacto</em>.
                 </h1>
                 <p class="reveal" style="transition-delay: 0.2s">
-                    Somos a Blank Studio. Criamos websites que convertem, estratégias SEO que posicionam e campanhas que geram resultados reais para o seu negócio.
+                    Somos a Blank Studio. Cada projeto começa do zero — depois criamos websites que convertem, estratégias que posicionam e marcas que ficam.
                 </p>
                 <div class="hero-buttons reveal" style="transition-delay: 0.3s">
                     <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento</a>
                     <a href="projetos.html" class="btn btn-outline btn-lg">Ver Projetos</a>
                 </div>
-                <div class="hero-stats reveal" style="margin-top: 80px; transition-delay: 0.4s;">
-                    <div class="stat-item">
-                        <div class="stat-number" data-counter="150">0</div>
-                        <div class="stat-label">Projetos Entregues</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-counter="98">0</div>
-                        <div class="stat-label">% Clientes Satisfeitos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-counter="8">0</div>
-                        <div class="stat-label">Anos de Experiência</div>
-                    </div>
-                </div>
             </div>
+        </div>
+        <div class="scroll-hint" aria-hidden="true">
+            <span class="scroll-hint-label">Scroll</span>
+            <span class="scroll-hint-line"></span>
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="section" style="background: white;">
+    <!-- Capabilities -->
+    <section class="capabilities" style="background: white;">
         <div class="container" style="max-width: 1280px; margin: 0 auto;">
-            <div class="section-header reveal">
-                <span class="section-label">O que fazemos</span>
-                <h2>Serviços que impulsionam o seu negócio</h2>
-                <p>Soluções digitais completas para levar o seu negócio ao próximo nível.</p>
+            <div class="capabilities-head reveal">
+                <div>
+                    <span class="section-label">O que fazemos</span>
+                    <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em;">Explore as nossas capacidades</h2>
+                </div>
+                <p style="max-width: 360px; color: var(--text-light); font-size: 1.0625rem; line-height: 1.7;">Cada projeto começa numa tela em branco. O que construímos a seguir depende do que o seu negócio precisa.</p>
             </div>
-            <div class="grid grid-3">
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    </div>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Websites modernos, rápidos e otimizados para conversão. Desde landing pages até plataformas complexas.</p>
-                    <a href="desenvolvimento-web.html" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:0.875rem;color:var(--accent);margin-top:16px;">Saber mais →</a>
-                </div>
-                <div class="card reveal" style="transition-delay: 0.1s">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    </div>
-                    <h3>SEO</h3>
-                    <p>Otimize a sua presença online e apareça no topo dos resultados de pesquisa do Google.</p>
-                    <a href="seo.html" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:0.875rem;color:var(--accent);margin-top:16px;">Saber mais →</a>
-                </div>
-                <div class="card reveal" style="transition-delay: 0.2s">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-                    </div>
-                    <h3>Google Ads</h3>
-                    <p>Campanhas publicitárias estratégicas que maximizam o retorno sobre o seu investimento.</p>
-                    <a href="google-ads.html" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:0.875rem;color:var(--accent);margin-top:16px;">Saber mais →</a>
-                </div>
-                <div class="card reveal">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <h3>Google Business</h3>
-                    <p>Gestão profissional do seu perfil no Google. Aumente a visibilidade local.</p>
-                    <a href="google-business.html" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:0.875rem;color:var(--accent);margin-top:16px;">Saber mais →</a>
-                </div>
-                <div class="card reveal" style="transition-delay: 0.1s">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-                    </div>
-                    <h3>Manutenção</h3>
-                    <p>Mantenha o seu website seguro, atualizado e funcionando perfeitamente 24/7.</p>
-                    <a href="manutencao.html" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:0.875rem;color:var(--accent);margin-top:16px;">Saber mais →</a>
-                </div>
-                <div class="card reveal" style="transition-delay: 0.2s">
-                    <div class="card-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    </div>
-                    <h3>Design & Branding</h3>
-                    <p>Identidade visual única e memorável para o seu negócio crescer com confiança.</p>
-                    <a href="servicos.html" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:0.875rem;color:var(--accent);margin-top:16px;">Saber mais →</a>
-                </div>
-            </div>
+            <ul class="capabilities-list reveal">
+                <li class="capability-item">
+                    <a href="desenvolvimento-web.html" class="capability-link">
+                        <span class="capability-index">01</span>
+                        <span class="capability-title">Desenvolvimento Web</span>
+                        <span class="capability-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="capability-item">
+                    <a href="seo.html" class="capability-link">
+                        <span class="capability-index">02</span>
+                        <span class="capability-title">SEO</span>
+                        <span class="capability-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="capability-item">
+                    <a href="google-ads.html" class="capability-link">
+                        <span class="capability-index">03</span>
+                        <span class="capability-title">Google Ads</span>
+                        <span class="capability-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="capability-item">
+                    <a href="google-business.html" class="capability-link">
+                        <span class="capability-index">04</span>
+                        <span class="capability-title">Google Business</span>
+                        <span class="capability-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="capability-item">
+                    <a href="manutencao.html" class="capability-link">
+                        <span class="capability-index">05</span>
+                        <span class="capability-title">Manutenção</span>
+                        <span class="capability-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="capability-item">
+                    <a href="servicos.html" class="capability-link">
+                        <span class="capability-index">06</span>
+                        <span class="capability-title">Design &amp; Branding</span>
+                        <span class="capability-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <!-- About Preview -->
-    <section class="section">
+    <!-- Manifesto -->
+    <section class="manifesto">
         <div class="container" style="max-width: 1280px; margin: 0 auto;">
-            <div class="grid grid-2" style="align-items: center; gap: 80px;">
-                <div class="reveal">
-                    <span class="section-label">Sobre Nós</span>
-                    <h2 style="margin-bottom: 24px;">Uma equipa apaixonada por resultados digitais</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-light);">Na Blank Studio, acreditamos que cada negócio merece uma presença digital de excelência. Com mais de 8 anos de experiência, ajudamos empresas de todos os tamanhos a crescer online.</p>
-                    <p style="margin-bottom: 32px; color: var(--text-light);">A nossa abordagem combina criatividade, tecnologia de ponta e estratégias baseadas em dados.</p>
+            <div class="manifesto-grid">
+                <div class="manifesto-text reveal">
+                    <span class="section-label">A Nossa Filosofia</span>
+                    <h2>Tudo começa com uma tela em branco.</h2>
+                    <p>O nome Blank Studio nasce de uma ideia simples: cada projeto começa do zero, sem preconceitos nem moldes. É nesse espaço em branco que criamos aquilo que o seu negócio realmente precisa.</p>
+                    <p>Com mais de 8 anos de experiência, combinamos criatividade, tecnologia e estratégia para transformar essa tela vazia em resultados reais.</p>
                     <a href="sobre.html" class="btn btn-outline">Conhecer a Equipa</a>
-                </div>
-                <div class="reveal" style="transition-delay: 0.2s">
-                    <div style="background: linear-gradient(135deg, var(--accent), #f7931e); border-radius: 24px; padding: 48px; position: relative; overflow: hidden; color: white;">
-                        <div style="position: relative; z-index: 1;">
-                            <div style="font-size: 4rem; font-weight: 800; margin-bottom: 8px;">150+</div>
-                            <p style="font-size: 1.125rem; color: rgba(255,255,255,0.9); margin-bottom: 40px;">Projetos entregues com sucesso</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                                <div>
-                                    <div style="font-size: 2rem; font-weight: 700;">98%</div>
-                                    <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Clientes Satisfeitos</p>
-                                </div>
-                                <div>
-                                    <div style="font-size: 2rem; font-weight: 700;">8+</div>
-                                    <p style="font-size: 0.875rem; color: rgba(255,255,255,0.8);">Anos de Experiência</p>
-                                </div>
-                            </div>
+                    <div class="manifesto-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="150">0</div>
+                            <div class="stat-label">Projetos Entregues</div>
                         </div>
-                        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-                        <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.08); border-radius: 50%;"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="98">0</div>
+                            <div class="stat-label">% Satisfação</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-counter="8">0</div>
+                            <div class="stat-label">Anos</div>
+                        </div>
                     </div>
+                </div>
+                <div class="manifesto-visual reveal" style="transition-delay: 0.2s" aria-hidden="true">
+                    <div class="manifesto-canvas"></div>
+                    <div class="manifesto-blob" data-parallax="0.1"></div>
+                    <div class="manifesto-mark" data-parallax="-0.15"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Preview -->
-    <section class="section" style="background: white;">
-        <div class="container" style="max-width: 1280px; margin: 0 auto;">
-            <div class="section-header reveal">
+    <!-- Marquee divider -->
+    <div class="marquee-band">
+        <div class="marquee-track" aria-hidden="true">
+            <span>Desenvolvimento Web</span><span>SEO</span><span>Google Ads</span><span>Google Business</span><span>Design &amp; Branding</span><span>Manutenção</span>
+            <span>Desenvolvimento Web</span><span>SEO</span><span>Google Ads</span><span>Google Business</span><span>Design &amp; Branding</span><span>Manutenção</span>
+        </div>
+    </div>
+
+    <!-- Featured Projects Slider -->
+    <section class="projects-slider" style="background: white;">
+        <div class="projects-head">
+            <div class="reveal">
                 <span class="section-label">Portfólio</span>
-                <h2>Projetos que falam por si</h2>
-                <p>Descubra alguns dos projetos que desenvolvemos para os nossos clientes.</p>
+                <h2 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em;">Projetos que falam por si</h2>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item reveal">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" alt="Sabor & Arte">
-                    <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Restaurantes</span>
-                        <h3>Sabor & Arte</h3>
-                        <p>Website e sistema de reservas</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" style="transition-delay: 0.1s">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop" alt="Clínica Vitalis">
-                    <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Clínicas</span>
-                        <h3>Clínica Vitalis</h3>
-                        <p>Website e marca digital</p>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal" style="transition-delay: 0.2s">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" alt="Prime Properties">
-                    <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Imobiliário</span>
-                        <h3>Prime Properties</h3>
-                        <p>Plataforma imobiliária completa</p>
-                    </div>
+            <div class="slider-nav"></div>
+        </div>
+        <div class="projects-track">
+            <div class="project-slide reveal">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&h=930&fit=crop" alt="Sabor & Arte" loading="lazy">
+                <div class="project-slide-overlay">
+                    <span class="project-slide-tag">Restaurantes</span>
+                    <h3>Sabor &amp; Arte</h3>
+                    <p>Website e sistema de reservas</p>
+                    <a href="projetos.html" class="project-slide-link">Explorar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
                 </div>
             </div>
-            <div class="text-center" style="margin-top: 48px;">
-                <a href="projetos.html" class="btn btn-outline btn-lg reveal">Ver Todos os Projetos</a>
+            <div class="project-slide reveal" style="transition-delay: 0.1s">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=700&h=930&fit=crop" alt="Clínica Vitalis" loading="lazy">
+                <div class="project-slide-overlay">
+                    <span class="project-slide-tag">Clínicas</span>
+                    <h3>Clínica Vitalis</h3>
+                    <p>Website e marca digital</p>
+                    <a href="projetos.html" class="project-slide-link">Explorar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                </div>
             </div>
+            <div class="project-slide reveal" style="transition-delay: 0.2s">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=930&fit=crop" alt="Prime Properties" loading="lazy">
+                <div class="project-slide-overlay">
+                    <span class="project-slide-tag">Imobiliário</span>
+                    <h3>Prime Properties</h3>
+                    <p>Plataforma imobiliária completa</p>
+                    <a href="projetos.html" class="project-slide-link">Explorar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                </div>
+            </div>
+            <div class="project-slide reveal">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&h=930&fit=crop" alt="Moda & Estilo" loading="lazy">
+                <div class="project-slide-overlay">
+                    <span class="project-slide-tag">E-commerce</span>
+                    <h3>Moda &amp; Estilo</h3>
+                    <p>Loja online de moda premium</p>
+                    <a href="projetos.html" class="project-slide-link">Explorar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                </div>
+            </div>
+            <div class="project-slide reveal" style="transition-delay: 0.1s">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=930&fit=crop" alt="Tech Solutions" loading="lazy">
+                <div class="project-slide-overlay">
+                    <span class="project-slide-tag">Empresas</span>
+                    <h3>Tech Solutions</h3>
+                    <p>Website corporativo e blog</p>
+                    <a href="projetos.html" class="project-slide-link">Explorar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 48px; padding-right: 40px;">
+            <a href="projetos.html" class="btn btn-outline btn-lg reveal">Ver Todos os Projetos</a>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="section">
-        <div class="container" style="max-width: 1280px; margin: 0 auto;">
-            <div class="section-header reveal">
-                <span class="section-label">Testemunhos</span>
-                <h2>O que os nossos clientes dizem</h2>
-            </div>
-            <div class="grid grid-3">
-                <div class="testimonial-card reveal">
-                    <p class="testimonial-text">"A Blank Studio transformou completamente a nossa presença online. O novo website aumentou as nossas reservas em 40% no primeiro mês."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MR</div>
-                        <div>
-                            <h4>Manuel Ribeiro</h4>
-                            <p>Proprietário, Sabor & Arte</p>
-                        </div>
-                    </div>
+    <section class="quote-slider">
+        <div class="quote-slider-inner">
+            <span class="quote-slider-label reveal">Testemunhos</span>
+            <div class="quote-track">
+                <div class="quote-slide active">
+                    <h3>&quot;A Blank Studio transformou completamente a nossa presença online. O novo website aumentou as nossas reservas em 40% no primeiro mês.&quot;</h3>
+                    <p class="quote-author">Manuel Ribeiro</p>
+                    <p class="quote-role">Proprietário, Sabor &amp; Arte</p>
                 </div>
-                <div class="testimonial-card reveal" style="transition-delay: 0.1s">
-                    <p class="testimonial-text">"Profissionalismo excecional. A equipa entendeu perfeitamente as nossas necessidades e entregou um website que superou todas as expectativas."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">SC</div>
-                        <div>
-                            <h4>Sofia Costa</h4>
-                            <p>Diretora, Clínica Vitalis</p>
-                        </div>
-                    </div>
+                <div class="quote-slide">
+                    <h3>&quot;Profissionalismo excecional. A equipa entendeu perfeitamente as nossas necessidades e entregou um website que superou todas as expectativas.&quot;</h3>
+                    <p class="quote-author">Sofia Costa</p>
+                    <p class="quote-role">Diretora, Clínica Vitalis</p>
                 </div>
-                <div class="testimonial-card reveal" style="transition-delay: 0.2s">
-                    <p class="testimonial-text">"A estratégia de SEO colocou-nos na primeira página do Google em apenas 3 meses. Resultados incríveis e equipa fantástica!"</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">PF</div>
-                        <div>
-                            <h4>Pedro Ferreira</h4>
-                            <p>CEO, Prime Properties</p>
-                        </div>
-                    </div>
+                <div class="quote-slide">
+                    <h3>&quot;A estratégia de SEO colocou-nos na primeira página do Google em apenas 3 meses. Resultados incríveis e equipa fantástica!&quot;</h3>
+                    <p class="quote-author">Pedro Ferreira</p>
+                    <p class="quote-role">CEO, Prime Properties</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section" style="background: white; text-align: center;">
-        <div class="container" style="max-width: 700px; margin: 0 auto;">
-            <div class="reveal">
-                <span class="section-label">Vamos Começar</span>
-                <h2 style="margin-bottom: 24px;">Pronto para transformar o seu negócio digital?</h2>
-                <p style="margin-bottom: 40px; color: var(--text-light); font-size: 1.125rem;">Fale connosco e descubra como podemos ajudar o seu negócio a crescer online. O primeiro orçamento é grátis.</p>
-                <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento Grátis</a>
-            </div>
+            <div class="quote-dots"></div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-cta reveal">
+            <h2>Tem um projeto em mente?<br>Vamos criar algo a partir do zero.</h2>
+            <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento</a>
+        </div>
         <div class="footer-grid" style="max-width: 1280px; margin: 0 auto; padding: 0 40px;">
             <div class="footer-brand">
                 <img src="images/logo.svg" alt="Blank Studio">
@@ -322,7 +322,7 @@
         </div>
         <div class="footer-bottom" style="max-width: 1280px; margin: 0 auto; padding: 24px 40px 0;">
             <p>&copy; 2026 Blank Studio. Todos os direitos reservados.</p>
-            <p>Desenhado com paixão em Portugal</p>
+            <button class="footer-top-link" aria-label="Voltar ao topo">Voltar ao Topo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
         </div>
     </footer>    <!-- Cookie Banner -->
     <div class="cookie-banner">

@@ -4,6 +4,7 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
+    initSplashscreen();
     initHamburgerMenu();
     initNavbarScroll();
     initScrollReveal();
@@ -13,7 +14,31 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initFormValidation();
     initCounters();
+    initParallax();
+    initProjectsSlider();
+    initQuoteSlider();
 });
+
+/* ===== SPLASHSCREEN ===== */
+function initSplashscreen() {
+    const splash = document.querySelector('.splashscreen');
+    if (!splash) return;
+
+    const MIN_DISPLAY_MS = 650;
+    const shownAt = Date.now();
+
+    function hide() {
+        const elapsed = Date.now() - shownAt;
+        const wait = Math.max(0, MIN_DISPLAY_MS - elapsed);
+        setTimeout(() => splash.classList.add('hidden'), wait);
+    }
+
+    if (document.readyState === 'complete') {
+        hide();
+    } else {
+        window.addEventListener('load', hide, { once: true });
+    }
+}
 
 /* ===== HAMBURGER MENU - VRRB STYLE ===== */
 function initHamburgerMenu() {
@@ -146,6 +171,12 @@ function initCookieBanner() {
 
 /* ===== BACK TO TOP ===== */
 function initBackToTop() {
+    document.querySelectorAll('.back-to-top, .footer-top-link').forEach(el => {
+        el.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
     const btn = document.querySelector('.back-to-top');
     if (!btn) return;
 
@@ -155,10 +186,6 @@ function initBackToTop() {
         } else {
             btn.classList.remove('visible');
         }
-    });
-
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
@@ -216,4 +243,131 @@ function initCounters() {
         }, { threshold: 0.5 });
         observer.observe(counter);
     });
+}
+
+/* ===== PARALLAX ===== */
+function initParallax() {
+    const items = document.querySelectorAll('[data-parallax]');
+    if (!items.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let ticking = false;
+
+    function update() {
+        const viewportH = window.innerHeight;
+        items.forEach(el => {
+            const speed = parseFloat(el.dataset.parallax) || 0.1;
+            const rect = el.getBoundingClientRect();
+            const center = rect.top + rect.height / 2;
+            const offset = (viewportH / 2 - center) * speed;
+            el.style.transform = `translateY(${offset}px)`;
+        });
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+}
+
+/* ===== FEATURED PROJECTS SLIDER ===== */
+function initProjectsSlider() {
+    const track = document.querySelector('.projects-track');
+    const dotsContainer = document.querySelector('.projects-slider .slider-nav');
+    if (!track || !dotsContainer) return;
+
+    const slides = Array.from(track.querySelectorAll('.project-slide'));
+    if (!slides.length) return;
+
+    dotsContainer.innerHTML = '';
+    const dots = slides.map((slide, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Ir para o projeto ${i + 1}`);
+        dot.addEventListener('click', () => {
+            slide.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        });
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+
+    function setActiveFromScroll() {
+        const trackRect = track.getBoundingClientRect();
+        let closestIndex = 0;
+        let closestDist = Infinity;
+        slides.forEach((slide, i) => {
+            const dist = Math.abs(slide.getBoundingClientRect().left - trackRect.left);
+            if (dist < closestDist) { closestDist = dist; closestIndex = i; }
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === closestIndex));
+    }
+
+    let ticking = false;
+    track.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => { setActiveFromScroll(); ticking = false; });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+/* ===== TESTIMONIAL / QUOTE SLIDER ===== */
+function initQuoteSlider() {
+    const wrapper = document.querySelector('.quote-slider');
+    if (!wrapper) return;
+
+    const slides = Array.from(wrapper.querySelectorAll('.quote-slide'));
+    const dotsContainer = wrapper.querySelector('.quote-dots');
+    if (!slides.length || !dotsContainer) return;
+
+    let index = 0;
+    let timer = null;
+    const AUTOPLAY_MS = 6000;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    dotsContainer.innerHTML = '';
+    const dots = slides.map((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'quote-dot' + (i === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Testemunho ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+
+    function goTo(i) {
+        slides[index].classList.remove('active');
+        dots[index].classList.remove('active');
+        index = (i + slides.length) % slides.length;
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+    function next() { goTo(index + 1); }
+
+    function start() {
+        if (reducedMotion || slides.length < 2) return;
+        stop();
+        timer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+    }
+
+    wrapper.addEventListener('mouseenter', stop);
+    wrapper.addEventListener('mouseleave', start);
+    wrapper.addEventListener('focusin', stop);
+    wrapper.addEventListener('focusout', start);
+
+    start();
 }
