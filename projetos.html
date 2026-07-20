@@ -21,6 +21,15 @@
     <link rel="apple-touch-icon" href="images/favicon/favicon-180.png">
 </head>
 <body>
+    <!-- Splashscreen -->
+    <div class="splashscreen">
+        <div class="splash-logo"><img src="images/logo.svg" alt="Blank Studio"></div>
+        <div class="splash-hint">
+            <span class="splash-dot"></span>
+            <span>A carregar</span>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo">
@@ -57,6 +66,7 @@
     </div>
 
     <section class="hero hero-sub">
+        <div class="hero-shape" data-parallax="0.1" aria-hidden="true"></div>
         <div class="container" style="max-width: 1280px; margin: 0 auto; width: 100%;">
             <div class="breadcrumb reveal">
                 <a href="index.html">Home</a>
@@ -82,7 +92,7 @@
                 <div class="portfolio-item reveal" data-category="restaurantes">
                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" alt="Sabor & Arte">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Restaurantes</span>
+                        <span class="project-slide-tag">Restaurantes</span>
                         <h3>Sabor & Arte</h3>
                         <p>Website e sistema de reservas online</p>
                     </div>
@@ -90,7 +100,7 @@
                 <div class="portfolio-item reveal" style="transition-delay: 0.1s" data-category="clinicas">
                     <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop" alt="Clínica Vitalis">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Clínicas</span>
+                        <span class="project-slide-tag">Clínicas</span>
                         <h3>Clínica Vitalis</h3>
                         <p>Website, marca digital e SEO local</p>
                     </div>
@@ -98,7 +108,7 @@
                 <div class="portfolio-item reveal" style="transition-delay: 0.2s" data-category="imobiliario">
                     <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" alt="Prime Properties">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Imobiliário</span>
+                        <span class="project-slide-tag">Imobiliário</span>
                         <h3>Prime Properties</h3>
                         <p>Plataforma imobiliária completa</p>
                     </div>
@@ -106,7 +116,7 @@
                 <div class="portfolio-item reveal" data-category="ecommerce">
                     <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" alt="Moda & Estilo">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">E-commerce</span>
+                        <span class="project-slide-tag">E-commerce</span>
                         <h3>Moda & Estilo</h3>
                         <p>Loja online de moda premium</p>
                     </div>
@@ -114,7 +124,7 @@
                 <div class="portfolio-item reveal" style="transition-delay: 0.1s" data-category="empresas">
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Tech Solutions">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Empresas</span>
+                        <span class="project-slide-tag">Empresas</span>
                         <h3>Tech Solutions</h3>
                         <p>Website corporativo e blog</p>
                     </div>
@@ -122,7 +132,7 @@
                 <div class="portfolio-item reveal" style="transition-delay: 0.2s" data-category="restaurantes">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" alt="Bistro do Largo">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Restaurantes</span>
+                        <span class="project-slide-tag">Restaurantes</span>
                         <h3>Bistro do Largo</h3>
                         <p>Website com menu digital e delivery</p>
                     </div>
@@ -130,7 +140,7 @@
                 <div class="portfolio-item reveal" data-category="clinicas">
                     <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&h=600&fit=crop" alt="Dentária Plus">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Clínicas</span>
+                        <span class="project-slide-tag">Clínicas</span>
                         <h3>Dentária Plus</h3>
                         <p>Website e sistema de marcações</p>
                     </div>
@@ -138,7 +148,7 @@
                 <div class="portfolio-item reveal" style="transition-delay: 0.1s" data-category="imobiliario">
                     <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop" alt="Casa Real">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">Imobiliário</span>
+                        <span class="project-slide-tag">Imobiliário</span>
                         <h3>Casa Real</h3>
                         <p>Website e gestão de propriedades</p>
                     </div>
@@ -146,7 +156,7 @@
                 <div class="portfolio-item reveal" style="transition-delay: 0.2s" data-category="ecommerce">
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Gourmet Online">
                     <div class="portfolio-overlay">
-                        <span class="tag" style="background: rgba(255,255,255,0.2); color: white;">E-commerce</span>
+                        <span class="project-slide-tag">E-commerce</span>
                         <h3>Gourmet Online</h3>
                         <p>Loja de produtos gourmet premium</p>
                     </div>
@@ -155,18 +165,15 @@
         </div>
     </section>
 
-    <section class="section" style="text-align: center;">
-        <div class="container" style="max-width: 700px; margin: 0 auto;">
-            <div class="reveal">
-                <h2 style="margin-bottom: 20px;">Quer ver o seu projeto aqui?</h2>
-                <p style="margin-bottom: 32px; color: var(--text-light);">Vamos criar algo incrível juntos. O primeiro orçamento é grátis.</p>
-                <a href="orcamento.html" class="btn btn-primary btn-lg">Iniciar Projeto</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-cta reveal">
+            <div>
+                <h2>Quer ver o seu projeto aqui?</h2>
+                <p>Vamos criar algo incrível juntos. O primeiro orçamento é grátis.</p>
+            </div>
+            <a href="orcamento.html" class="btn btn-primary btn-lg">Iniciar Projeto</a>
+        </div>
         <div class="footer-grid" style="max-width: 1280px; margin: 0 auto 60px; padding: 0 40px;">
             <div class="footer-brand">
                 <img src="images/logo.svg" alt="Blank Studio">
