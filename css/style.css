@@ -1438,7 +1438,7 @@ body.has-cursor-dot .quote-dot {
 .article-toc a:hover { color: var(--accent); }
 
 /* ===== BLOG CARD ===== */
-.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 32px; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr)); gap: 32px; }
 .blog-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.4s var(--transition); }
 .blog-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
 .blog-card-image { aspect-ratio: 16/9; overflow: hidden; }
