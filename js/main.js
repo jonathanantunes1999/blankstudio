@@ -17,7 +17,64 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallax();
     initProjectsSlider();
     initQuoteSlider();
+    initCursorDot();
 });
+
+/* ===== CURSOR DOT - VRRB STYLE ===== */
+function initCursorDot() {
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+    document.body.appendChild(dot);
+    document.body.classList.add('has-cursor-dot');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let dotX = mouseX;
+    let dotY = mouseY;
+    let isVisible = false;
+
+    const interactiveSelector = 'a, button, input, textarea, select, [role="button"]';
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!isVisible) {
+            dotX = mouseX;
+            dotY = mouseY;
+            isVisible = true;
+            dot.classList.add('visible');
+        }
+    });
+
+    document.addEventListener('mouseleave', () => {
+        isVisible = false;
+        dot.classList.remove('visible');
+    });
+    document.addEventListener('mouseenter', () => {
+        isVisible = true;
+        dot.classList.add('visible');
+    });
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelector)) dot.classList.add('hover');
+    });
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelector)) dot.classList.remove('hover');
+    });
+    document.addEventListener('mousedown', () => dot.classList.add('pressed'));
+    document.addEventListener('mouseup', () => dot.classList.remove('pressed'));
+
+    function render() {
+        dotX += (mouseX - dotX) * 0.18;
+        dotY += (mouseY - dotY) * 0.18;
+        dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+}
 
 /* ===== SPLASHSCREEN ===== */
 function initSplashscreen() {
