@@ -482,6 +482,60 @@ body.menu-open { overflow: hidden; }
     .hero-shape, .hero-shape--ring, .hero-dot { animation: none; }
 }
 
+/* ===== AMBIENT DOTS - a small, quiet touch reused across the site ===== */
+.ambient-dot {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.ambient-dot--a {
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    opacity: 0.12;
+    animation: ambient-dot-float-a 7s ease-in-out infinite;
+}
+.ambient-dot--b {
+    width: 20px;
+    height: 20px;
+    background: var(--text);
+    opacity: 0.06;
+    animation: ambient-dot-float-b 8.5s ease-in-out infinite 1.2s;
+}
+.ambient-dot--c {
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid var(--accent);
+    opacity: 0.2;
+    animation: ambient-dot-float-a 6.2s ease-in-out infinite 2.4s;
+}
+/* Light variants for dark sections, like the footer */
+.ambient-dot--footer-a {
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    animation: ambient-dot-float-a 7.4s ease-in-out infinite 0.6s;
+}
+.ambient-dot--footer-b {
+    width: 11px;
+    height: 11px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    animation: ambient-dot-float-b 6.8s ease-in-out infinite 1.9s;
+}
+@keyframes ambient-dot-float-a {
+    0%, 100% { transform: translate(0, 0); }
+    30% { transform: translate(14px, -18px); }
+    65% { transform: translate(-10px, 10px); }
+}
+@keyframes ambient-dot-float-b {
+    0%, 100% { transform: translate(0, 0); }
+    35% { transform: translate(-16px, 12px); }
+    70% { transform: translate(12px, -14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ambient-dot { animation: none; }
+}
+
 .hero-content { max-width: 900px; position: relative; }
 
 .hero-label {
@@ -1316,6 +1370,8 @@ textarea { min-height: 140px; resize: vertical; }
     /* Top padding keeps pages without .footer-cta from looking cramped;
        extra bottom padding keeps footer-bottom clear of the fixed cookie banner at full scroll */
     padding: 80px 40px 130px;
+    position: relative;
+    overflow: hidden;
 }
 .footer-cta {
     max-width: 1280px;
