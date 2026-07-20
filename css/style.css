@@ -1176,24 +1176,6 @@ textarea { min-height: 140px; resize: vertical; }
     gap: 12px;
 }
 .footer-bottom p { font-size: 0.8125rem; color: rgba(255,255,255,0.4); }
-.footer-top-link {
-    background: none;
-    border: none;
-    color: rgba(255,255,255,0.6);
-    font-family: var(--font);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s var(--transition);
-}
-.footer-top-link:hover { color: var(--accent); }
-.footer-top-link svg { transition: transform 0.3s var(--transition); }
-.footer-top-link:hover svg { transform: translateY(-3px); }
 
 @media (max-width: 1024px) {
     .footer-grid { grid-template-columns: 1fr 1fr; }

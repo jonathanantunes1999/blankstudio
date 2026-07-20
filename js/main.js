@@ -234,14 +234,12 @@ function initCookieBanner() {
 
 /* ===== BACK TO TOP ===== */
 function initBackToTop() {
-    document.querySelectorAll('.back-to-top, .footer-top-link').forEach(el => {
-        el.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    });
-
     const btn = document.querySelector('.back-to-top');
     if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 500) {
