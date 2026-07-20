@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="87.775" height="87.775" viewBox="10.591 8.866 87.775 87.775">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="117.034" height="117.034" viewBox="-4.038 -5.763 117.034 117.034">
 <defs>
 <clipPath id="clip_1">
 <path transform="matrix(1,0,0,-1,0,105.508)" d="M0 105.508H108.957V0H0Z"/>
 </clipPath>
 </defs>
 <g inkscape:groupmode="layer" inkscape:label="Layer 1">
-<rect x="10.591" y="8.866" width="87.775" height="87.775" rx="19.311" ry="19.311" fill="#ffffff"/>
+<rect x="-4.038" y="-5.763" width="117.034" height="117.034" rx="25.747" ry="25.747" fill="#ffffff"/>
 <g clip-path="url(#clip_1)">
 <path transform="matrix(1,0,0,-1,76.7265,69.396808)" d="M0 0C7.155-2.779 11.829-9.502 11.851-17.188L5.125-17.201C5.159-10.944 .191-5.766-6.112-5.5L-16.233-5.494-16.231-17.192-23.76-17.197-23.765 14.887-16.235 14.889-16.24 1.524-7.764 1.521-.188 9.957 2.079 12.452 11.87 12.44Z" fill="#231f20"/>
 <path transform="matrix(1,0,0,-1,33.4128,63.001905)" d="M0 0C-1.634-.354-2.956-1.288-3.865-2.641-5.051-4.407-5.395-6.506-5.379-8.65L-5.376-23.59-12.918-23.588-12.925-8.408-2.183 4.78C-1.315 5.512-.349 5.935 .744 6.202 2.622 6.582 4.52 6.67 6.414 6.369 10.096 5.782 13.128 3.416 14.625 .015 15.366-1.669 15.714-3.429 15.765-5.304L15.769-23.59 8.243-23.592 8.242-6.076C8.165-3.334 7.031-.902 4.309-.122 2.912 .278 1.466 .317 0 0" fill="#231f20"/>
