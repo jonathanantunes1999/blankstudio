@@ -61,8 +61,8 @@ body {
 
 /* Hamburger Button */
 .hamburger {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     position: relative;
     cursor: pointer;
     z-index: 1002;
@@ -73,6 +73,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6px;
+    border-radius: 50%;
+    transition: background 0.3s var(--transition);
+}
+
+.hamburger:hover {
+    background: rgba(26, 26, 26, 0.06);
 }
 
 .hamburger-line {
@@ -81,12 +87,22 @@ body {
     height: 2px;
     background: var(--text);
     border-radius: 2px;
-    transition: all 0.4s var(--transition);
     transform-origin: center;
+    transition: transform 0.45s var(--transition-bounce),
+                opacity 0.3s var(--transition),
+                width 0.3s var(--transition);
 }
 
+/* Playful hover: outer lines stretch slightly */
+.hamburger:hover .hamburger-line:nth-child(1),
+.hamburger:hover .hamburger-line:nth-child(3) {
+    width: 32px;
+}
+
+/* Morph into an X */
 .hamburger.active .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
+    width: 30px;
 }
 .hamburger.active .hamburger-line:nth-child(2) {
     opacity: 0;
@@ -94,9 +110,10 @@ body {
 }
 .hamburger.active .hamburger-line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+    width: 30px;
 }
 
-/* Full Screen Menu Overlay */
+/* Full Screen Menu Overlay - circular reveal from the hamburger */
 .menu-overlay {
     position: fixed;
     inset: 0;
@@ -105,14 +122,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s var(--transition), visibility 0.5s;
+    clip-path: circle(0% at calc(100% - 62px) 46px);
+    transition: clip-path 0.75s cubic-bezier(0.86, 0, 0.07, 1),
+                visibility 0s linear 0.75s;
 }
 
 .menu-overlay.active {
-    opacity: 1;
     visibility: visible;
+    clip-path: circle(150% at calc(100% - 62px) 46px);
+    transition: clip-path 0.75s cubic-bezier(0.86, 0, 0.07, 1),
+                visibility 0s;
 }
 
 .menu-content {
@@ -121,13 +141,18 @@ body {
 
 .menu-item {
     display: block;
+    position: relative;
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--text);
-    padding: 12px 0;
+    text-decoration: none;
+    padding: 10px 0;
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.5s var(--transition);
+    transform: translateY(48px);
+    transition: opacity 0.5s var(--transition),
+                transform 0.6s var(--transition-bounce),
+                color 0.3s var(--transition);
 }
 
 .menu-overlay.active .menu-item {
@@ -135,22 +160,47 @@ body {
     transform: translateY(0);
 }
 
-.menu-overlay.active .menu-item:nth-child(1) { transition-delay: 0.1s; }
-.menu-overlay.active .menu-item:nth-child(2) { transition-delay: 0.15s; }
-.menu-overlay.active .menu-item:nth-child(3) { transition-delay: 0.2s; }
-.menu-overlay.active .menu-item:nth-child(4) { transition-delay: 0.25s; }
-.menu-overlay.active .menu-item:nth-child(5) { transition-delay: 0.3s; }
-.menu-overlay.active .menu-item:nth-child(6) { transition-delay: 0.35s; }
+/* Staggered entrance */
+.menu-overlay.active .menu-item:nth-child(1) { transition-delay: 0.15s; }
+.menu-overlay.active .menu-item:nth-child(2) { transition-delay: 0.22s; }
+.menu-overlay.active .menu-item:nth-child(3) { transition-delay: 0.29s; }
+.menu-overlay.active .menu-item:nth-child(4) { transition-delay: 0.36s; }
+.menu-overlay.active .menu-item:nth-child(5) { transition-delay: 0.43s; }
+.menu-overlay.active .menu-item:nth-child(6) { transition-delay: 0.50s; }
+
+/* Animated underline sweeping in from the centre */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0.12em;
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+    transform: translateX(-50%);
+    transition: width 0.4s var(--transition-bounce);
+}
 
 .menu-item:hover {
     color: var(--accent);
+}
+
+.menu-item:hover::after {
+    width: 44%;
+}
+
+/* Editorial focus: dim the items you are not pointing at */
+.menu-content:hover .menu-item:not(:hover) {
+    opacity: 0.35;
 }
 
 .menu-cta {
     margin-top: 40px;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.5s var(--transition) 0.4s;
+    transition: opacity 0.5s var(--transition) 0.55s,
+                transform 0.5s var(--transition) 0.55s;
 }
 
 .menu-overlay.active .menu-cta {
@@ -159,6 +209,26 @@ body {
 }
 
 body.menu-open { overflow: hidden; }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .menu-overlay {
+        clip-path: none;
+        opacity: 0;
+        transition: opacity 0.2s linear, visibility 0s linear 0.2s;
+    }
+    .menu-overlay.active {
+        opacity: 1;
+        transition: opacity 0.2s linear, visibility 0s;
+    }
+    .hamburger-line,
+    .menu-item,
+    .menu-cta {
+        transition-duration: 0.15s !important;
+        transition-delay: 0s !important;
+    }
+    .menu-item { transform: none; }
+}
 
 /* ===== BUTTONS ===== */
 .btn {
