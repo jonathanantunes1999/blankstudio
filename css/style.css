@@ -387,68 +387,67 @@ body.menu-open { overflow: hidden; }
     pointer-events: none;
 }
 .hero-dot-1 {
-    top: 22%;
-    left: 8%;
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    opacity: 0.16;
-    animation: hero-dot-bounce-a 6.5s ease-in-out infinite;
+    top: 8%;
+    left: -4%;
+    width: min(22vw, 220px);
+    height: min(22vw, 220px);
+    background: radial-gradient(circle at 35% 30%, var(--accent), transparent 70%);
+    opacity: 0.13;
+    animation: hero-dot-bounce-a 9s ease-in-out infinite;
 }
 .hero-dot-2 {
-    top: 58%;
-    left: 22%;
-    width: 24px;
-    height: 24px;
-    background: var(--accent);
-    opacity: 0.1;
-    animation: hero-dot-bounce-b 8s ease-in-out infinite 0.6s;
+    top: 54%;
+    left: 6%;
+    width: min(14vw, 150px);
+    height: min(14vw, 150px);
+    background: radial-gradient(circle at 35% 30%, var(--accent), transparent 70%);
+    opacity: 0.12;
+    animation: hero-dot-bounce-b 11s ease-in-out infinite 0.8s;
 }
 .hero-dot-3 {
-    top: 40%;
-    left: 38%;
-    width: 10px;
-    height: 10px;
-    border: 1.5px solid var(--text);
-    opacity: 0.15;
-    animation: hero-dot-bounce-c 5.5s ease-in-out infinite 1.2s;
+    top: 32%;
+    left: 30%;
+    width: min(9vw, 90px);
+    height: min(9vw, 90px);
+    border: 1.5px dashed var(--border);
+    animation: hero-dot-bounce-c 7.5s ease-in-out infinite 1.6s;
 }
 .hero-dot-4 {
-    top: 16%;
-    left: 46%;
-    width: 18px;
-    height: 18px;
-    background: var(--text);
-    opacity: 0.06;
-    animation: hero-dot-bounce-a 7.2s ease-in-out infinite 2.4s;
+    top: 2%;
+    left: 34%;
+    width: min(11vw, 120px);
+    height: min(11vw, 120px);
+    background: radial-gradient(circle at 40% 35%, var(--text), transparent 70%);
+    opacity: 0.05;
+    animation: hero-dot-bounce-a 10s ease-in-out infinite 3s;
 }
 .hero-dot-5 {
-    top: 74%;
-    left: 44%;
-    width: 12px;
-    height: 12px;
+    top: 68%;
+    left: 26%;
+    width: min(7vw, 70px);
+    height: min(7vw, 70px);
     border: 1.5px solid var(--accent);
-    opacity: 0.22;
-    animation: hero-dot-bounce-b 6s ease-in-out infinite 3.2s;
+    opacity: 0.2;
+    animation: hero-dot-bounce-b 8s ease-in-out infinite 4s;
 }
 @keyframes hero-dot-bounce-a {
-    0%, 100% { transform: translate(0, 0); }
-    20% { transform: translate(22px, -16px); }
-    45% { transform: translate(8px, 14px); }
-    70% { transform: translate(-18px, -8px); }
-    88% { transform: translate(12px, 6px); }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    20% { transform: translate(4%, -5%) scale(1.05); }
+    45% { transform: translate(2%, 4%) scale(0.97); }
+    70% { transform: translate(-5%, -2%) scale(1.03); }
+    88% { transform: translate(3%, 2%) scale(0.99); }
 }
 @keyframes hero-dot-bounce-b {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-24px, 12px); }
-    50% { transform: translate(16px, -20px); }
-    75% { transform: translate(10px, 16px); }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-6%, 3%) scale(0.95); }
+    50% { transform: translate(4%, -5%) scale(1.06); }
+    75% { transform: translate(3%, 4%) scale(0.98); }
 }
 @keyframes hero-dot-bounce-c {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    30% { transform: translate(18px, 18px) scale(1.2); }
-    60% { transform: translate(-16px, 8px) scale(0.85); }
-    85% { transform: translate(8px, -14px) scale(1.05); }
+    30% { transform: translate(5%, 5%) scale(1.15); }
+    60% { transform: translate(-4%, 2%) scale(0.88); }
+    85% { transform: translate(2%, -4%) scale(1.05); }
 }
 @media (prefers-reduced-motion: reduce) {
     .hero-shape, .hero-shape--ring, .hero-dot { animation: none; }
