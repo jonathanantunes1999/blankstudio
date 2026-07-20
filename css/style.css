@@ -385,9 +385,8 @@ body.menu-open { overflow: hidden; }
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-}
-.hero-dot {
     box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.3);
+    opacity: 0.4;
 }
 .hero-dot-1 {
     top: 14%;
