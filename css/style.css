@@ -703,6 +703,76 @@ body.menu-open { overflow: hidden; }
     .capability-arrow { width: 36px; height: 36px; }
 }
 
+/* ===== SERVICE DETAIL ROWS ===== */
+.service-list { list-style: none; border-top: 1px solid var(--border); }
+.service-row {
+    border-bottom: 1px solid var(--border);
+    padding: 56px 4px;
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 32px;
+    align-items: start;
+    transition: opacity 0.4s var(--transition);
+}
+.service-row-index {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding-top: 6px;
+}
+.service-row-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    transition: color 0.3s var(--transition);
+}
+.service-row-desc {
+    color: var(--text-light);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 640px;
+}
+.service-row-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.service-row-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text);
+    white-space: nowrap;
+    transition: color 0.3s var(--transition);
+}
+.service-row-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s var(--transition-bounce);
+}
+.service-row:hover .service-row-title,
+.service-row:hover .service-row-link { color: var(--accent); }
+.service-row:hover .service-row-arrow {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: white;
+    transform: translateX(4px);
+}
+.service-list:hover .service-row:not(:hover) { opacity: 0.5; }
+
+@media (max-width: 768px) {
+    .service-row { grid-template-columns: 1fr; gap: 16px; padding: 40px 2px; }
+    .service-row-index { padding-top: 0; }
+    .service-row-link { justify-self: start; }
+}
+
 /* ===== PROJECTS SLIDER ===== */
 .projects-slider { padding: 100px 0 120px 40px; overflow: hidden; }
 .projects-head {

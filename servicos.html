@@ -21,6 +21,15 @@
     <link rel="apple-touch-icon" href="images/favicon/favicon-180.png">
 </head>
 <body>
+    <!-- Splashscreen -->
+    <div class="splashscreen">
+        <div class="splash-logo"><img src="images/logo.svg" alt="Blank Studio"></div>
+        <div class="splash-hint">
+            <span class="splash-dot"></span>
+            <span>A carregar</span>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="logo">
@@ -57,6 +66,7 @@
     </div>
 
     <section class="hero hero-sub">
+        <div class="hero-shape" data-parallax="0.1" aria-hidden="true"></div>
         <div class="container" style="max-width: 1280px; margin: 0 auto; width: 100%;">
             <div class="breadcrumb reveal">
                 <a href="index.html">Home</a>
@@ -70,107 +80,122 @@
 
     <section class="section" style="background: white;">
         <div class="container" style="max-width: 1280px; margin: 0 auto;">
-            <div class="grid grid-2" style="gap: 32px;">
-                <div class="card reveal" style="padding: 48px;">
-                    <div class="card-icon" style="width: 64px; height: 64px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <ul class="service-list reveal">
+                <li class="service-row">
+                    <span class="service-row-index">01</span>
+                    <div class="service-row-content">
+                        <h3 class="service-row-title">Desenvolvimento Web</h3>
+                        <p class="service-row-desc">Websites modernos, responsivos e otimizados para conversão. Desde landing pages até e-commerce.</p>
+                        <div class="service-row-tags">
+                            <span class="tag">Websites institucionais</span>
+                            <span class="tag">Lojas online (E-commerce)</span>
+                            <span class="tag">Landing pages</span>
+                            <span class="tag">Aplicações web</span>
+                        </div>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Desenvolvimento Web</h3>
-                    <p style="margin-bottom: 24px; color: var(--text-light);">Websites modernos, responsivos e otimizados para conversão. Desde landing pages até e-commerce.</p>
-                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-light);">
-                        <li style="margin-bottom: 8px;">Websites institucionais</li>
-                        <li style="margin-bottom: 8px;">Lojas online (E-commerce)</li>
-                        <li style="margin-bottom: 8px;">Landing pages</li>
-                        <li style="margin-bottom: 8px;">Aplicações web</li>
-                    </ul>
-                    <a href="desenvolvimento-web.html" class="btn btn-outline">Saber Mais</a>
-                </div>
-                <div class="card reveal" style="padding: 48px; transition-delay: 0.1s;">
-                    <div class="card-icon" style="width: 64px; height: 64px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <a href="desenvolvimento-web.html" class="service-row-link">
+                        Saber Mais
+                        <span class="service-row-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="service-row">
+                    <span class="service-row-index">02</span>
+                    <div class="service-row-content">
+                        <h3 class="service-row-title">SEO</h3>
+                        <p class="service-row-desc">Otimização para motores de busca que coloca o seu website no topo do Google.</p>
+                        <div class="service-row-tags">
+                            <span class="tag">SEO On-Page</span>
+                            <span class="tag">SEO Off-Page</span>
+                            <span class="tag">SEO Técnico</span>
+                            <span class="tag">SEO Local</span>
+                        </div>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">SEO</h3>
-                    <p style="margin-bottom: 24px; color: var(--text-light);">Otimização para motores de busca que coloca o seu website no topo do Google.</p>
-                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-light);">
-                        <li style="margin-bottom: 8px;">SEO On-Page</li>
-                        <li style="margin-bottom: 8px;">SEO Off-Page</li>
-                        <li style="margin-bottom: 8px;">SEO Técnico</li>
-                        <li style="margin-bottom: 8px;">SEO Local</li>
-                    </ul>
-                    <a href="seo.html" class="btn btn-outline">Saber Mais</a>
-                </div>
-                <div class="card reveal" style="padding: 48px;">
-                    <div class="card-icon" style="width: 64px; height: 64px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    <a href="seo.html" class="service-row-link">
+                        Saber Mais
+                        <span class="service-row-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="service-row">
+                    <span class="service-row-index">03</span>
+                    <div class="service-row-content">
+                        <h3 class="service-row-title">Google Ads</h3>
+                        <p class="service-row-desc">Campanhas publicitárias estratégicas que maximizam o ROI.</p>
+                        <div class="service-row-tags">
+                            <span class="tag">Search Ads</span>
+                            <span class="tag">Display &amp; Remarketing</span>
+                            <span class="tag">Shopping Ads</span>
+                            <span class="tag">YouTube Ads</span>
+                        </div>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Google Ads</h3>
-                    <p style="margin-bottom: 24px; color: var(--text-light);">Campanhas publicitárias estratégicas que maximizam o ROI.</p>
-                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-light);">
-                        <li style="margin-bottom: 8px;">Search Ads</li>
-                        <li style="margin-bottom: 8px;">Display & Remarketing</li>
-                        <li style="margin-bottom: 8px;">Shopping Ads</li>
-                        <li style="margin-bottom: 8px;">YouTube Ads</li>
-                    </ul>
-                    <a href="google-ads.html" class="btn btn-outline">Saber Mais</a>
-                </div>
-                <div class="card reveal" style="padding: 48px; transition-delay: 0.1s;">
-                    <div class="card-icon" style="width: 64px; height: 64px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <a href="google-ads.html" class="service-row-link">
+                        Saber Mais
+                        <span class="service-row-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="service-row">
+                    <span class="service-row-index">04</span>
+                    <div class="service-row-content">
+                        <h3 class="service-row-title">Google Business Profile</h3>
+                        <p class="service-row-desc">Gestão profissional do seu perfil no Google Maps e Pesquisa.</p>
+                        <div class="service-row-tags">
+                            <span class="tag">Otimização do perfil</span>
+                            <span class="tag">Gestão de avaliações</span>
+                            <span class="tag">Publicações regulares</span>
+                            <span class="tag">Relatórios mensais</span>
+                        </div>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Google Business Profile</h3>
-                    <p style="margin-bottom: 24px; color: var(--text-light);">Gestão profissional do seu perfil no Google Maps e Pesquisa.</p>
-                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-light);">
-                        <li style="margin-bottom: 8px;">Otimização do perfil</li>
-                        <li style="margin-bottom: 8px;">Gestão de avaliações</li>
-                        <li style="margin-bottom: 8px;">Publicações regulares</li>
-                        <li style="margin-bottom: 8px;">Relatórios mensais</li>
-                    </ul>
-                    <a href="google-business.html" class="btn btn-outline">Saber Mais</a>
-                </div>
-                <div class="card reveal" style="padding: 48px;">
-                    <div class="card-icon" style="width: 64px; height: 64px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                    <a href="google-business.html" class="service-row-link">
+                        Saber Mais
+                        <span class="service-row-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="service-row">
+                    <span class="service-row-index">05</span>
+                    <div class="service-row-content">
+                        <h3 class="service-row-title">Manutenção de Websites</h3>
+                        <p class="service-row-desc">Mantenha o seu website seguro, rápido e sempre online.</p>
+                        <div class="service-row-tags">
+                            <span class="tag">Atualizações de segurança</span>
+                            <span class="tag">Backups automáticos</span>
+                            <span class="tag">Monitorização 24/7</span>
+                            <span class="tag">Suporte técnico</span>
+                        </div>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Manutenção de Websites</h3>
-                    <p style="margin-bottom: 24px; color: var(--text-light);">Mantenha o seu website seguro, rápido e sempre online.</p>
-                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-light);">
-                        <li style="margin-bottom: 8px;">Atualizações de segurança</li>
-                        <li style="margin-bottom: 8px;">Backups automáticos</li>
-                        <li style="margin-bottom: 8px;">Monitorização 24/7</li>
-                        <li style="margin-bottom: 8px;">Suporte técnico</li>
-                    </ul>
-                    <a href="manutencao.html" class="btn btn-outline">Saber Mais</a>
-                </div>
-                <div class="card reveal" style="padding: 48px; transition-delay: 0.1s;">
-                    <div class="card-icon" style="width: 64px; height: 64px;">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <a href="manutencao.html" class="service-row-link">
+                        Saber Mais
+                        <span class="service-row-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+                <li class="service-row">
+                    <span class="service-row-index">06</span>
+                    <div class="service-row-content">
+                        <h3 class="service-row-title">Design &amp; Branding</h3>
+                        <p class="service-row-desc">Identidade visual única e memorável para o seu negócio.</p>
+                        <div class="service-row-tags">
+                            <span class="tag">Logotipo e identidade</span>
+                            <span class="tag">Diretrizes de marca</span>
+                            <span class="tag">Materiais gráficos</span>
+                            <span class="tag">UI/UX Design</span>
+                        </div>
                     </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Design & Branding</h3>
-                    <p style="margin-bottom: 24px; color: var(--text-light);">Identidade visual única e memorável para o seu negócio.</p>
-                    <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-light);">
-                        <li style="margin-bottom: 8px;">Logotipo e identidade</li>
-                        <li style="margin-bottom: 8px;">Diretrizes de marca</li>
-                        <li style="margin-bottom: 8px;">Materiais gráficos</li>
-                        <li style="margin-bottom: 8px;">UI/UX Design</li>
-                    </ul>
-                    <a href="orcamento.html" class="btn btn-outline">Pedir Orçamento</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="text-align: center;">
-        <div class="container" style="max-width: 700px; margin: 0 auto;">
-            <div class="reveal">
-                <h2 style="margin-bottom: 20px;">Não sabe por onde começar?</h2>
-                <p style="margin-bottom: 32px; color: var(--text-light);">Fale connosco e ajudamos a escolher a melhor estratégia digital para o seu negócio.</p>
-                <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento Grátis</a>
-            </div>
+                    <a href="orcamento.html" class="service-row-link">
+                        Pedir Orçamento
+                        <span class="service-row-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-cta reveal">
+            <div>
+                <h2>Não sabe por onde começar?</h2>
+                <p>Fale connosco e ajudamos a escolher a melhor estratégia digital para o seu negócio.</p>
+            </div>
+            <a href="orcamento.html" class="btn btn-primary btn-lg">Pedir Orçamento Grátis</a>
+        </div>
         <div class="footer-grid" style="max-width: 1280px; margin: 0 auto 60px; padding: 0 40px;">
             <div class="footer-brand">
                 <img src="images/logo.svg" alt="Blank Studio">
