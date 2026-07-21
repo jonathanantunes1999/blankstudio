@@ -230,6 +230,13 @@ body.menu-open .logo img {
     height: auto;
 }
 
+@media (max-width: 768px) {
+    .menu-bg-mark {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
 /* Video clipped to the logo's letterforms, playing behind the menu links */
 .menu-bg-video {
     width: min(55vw, 640px);
