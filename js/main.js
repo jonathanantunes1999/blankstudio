@@ -109,14 +109,35 @@ function initHamburgerMenu() {
     const overlay = document.querySelector('.menu-overlay');
     const menuItems = document.querySelectorAll('.menu-item');
     const bgVideo = overlay ? overlay.querySelector('.menu-bg-video') : null;
+    const bgMark = overlay ? overlay.querySelector('.menu-bg-mark') : null;
+    const menuContent = overlay ? overlay.querySelector('.menu-content') : null;
 
     if (!hamburger || !overlay) return;
+
+    // On mobile the logo/video mark should sit vertically centred on the
+    // actual rendered menu links, not on the full viewport (which also
+    // counts the empty space the fixed navbar bar takes up).
+    function alignBgMarkToContent() {
+        if (!bgMark || !menuContent) return;
+        if (window.innerWidth > 768) {
+            bgMark.style.top = '';
+            bgMark.style.height = '';
+            return;
+        }
+        if (!menuItems.length) return;
+        const first = menuItems[0].getBoundingClientRect();
+        const last = menuItems[menuItems.length - 1].getBoundingClientRect();
+        bgMark.style.top = first.top + 'px';
+        bgMark.style.height = (last.bottom - first.top) + 'px';
+    }
 
     function setMenu(open) {
         hamburger.classList.toggle('active', open);
         overlay.classList.toggle('active', open);
         document.body.classList.toggle('menu-open', open);
         hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+        if (open) alignBgMarkToContent();
 
         if (bgVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             if (open) {
@@ -130,6 +151,10 @@ function initHamburgerMenu() {
             }
         }
     }
+
+    window.addEventListener('resize', () => {
+        if (overlay.classList.contains('active')) alignBgMarkToContent();
+    });
 
     // Toggle on hamburger click
     hamburger.addEventListener('click', function() {
