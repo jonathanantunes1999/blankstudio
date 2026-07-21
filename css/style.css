@@ -360,10 +360,10 @@ body.menu-open { overflow: hidden; }
 
 .hero-shape--ring {
     position: absolute;
-    bottom: 6%;
-    right: 14%;
-    width: min(18vw, 220px);
-    height: min(18vw, 220px);
+    bottom: 4%;
+    right: 12%;
+    width: min(24vw, 290px);
+    height: min(24vw, 290px);
     border-radius: 50%;
     border: 1.5px dashed var(--border);
     pointer-events: none;
@@ -372,18 +372,17 @@ body.menu-open { overflow: hidden; }
 
 .hero-shape-logo {
     position: absolute;
-    bottom: 6%;
-    right: 14%;
-    width: min(18vw, 220px);
-    height: min(18vw, 220px);
+    bottom: 4%;
+    right: 12%;
+    width: min(24vw, 290px);
+    height: min(24vw, 290px);
     display: flex;
     align-items: center;
     justify-content: center;
     pointer-events: none;
-    opacity: 0.16;
 }
 .hero-shape-logo img {
-    width: 42%;
+    width: 66%;
     height: auto;
 }
 
