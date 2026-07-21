@@ -111,6 +111,67 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
+/* Small floating CTA tab under the hamburger: a dot + vertical label */
+.nav-side-cta {
+    position: fixed;
+    top: 108px;
+    right: 40px;
+    z-index: 999;
+    width: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    transition: opacity 0.3s var(--transition), transform 0.3s var(--transition);
+}
+.nav-side-cta:hover {
+    transform: translateY(-2px);
+}
+.nav-side-cta-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    transition: transform 0.3s var(--transition-bounce);
+}
+.nav-side-cta:hover .nav-side-cta-dot {
+    transform: scale(1.25);
+}
+.nav-side-cta-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    white-space: nowrap;
+    transition: color 0.3s var(--transition);
+}
+.nav-side-cta:hover .nav-side-cta-label {
+    color: var(--accent);
+}
+
+body.menu-open .nav-side-cta {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .nav-side-cta {
+        top: 92px;
+        right: 24px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav-side-cta,
+    .nav-side-cta-dot,
+    .nav-side-cta-label {
+        transition: none;
+    }
+}
+
 /* While the menu is open the navbar must stay transparent, whatever the
    scroll state, so only the black overlay shows behind the logo/X */
 body.menu-open .navbar {
