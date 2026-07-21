@@ -96,7 +96,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1002;
     padding: 24px 40px;
     display: flex;
     align-items: center;
@@ -1664,8 +1664,8 @@ body.has-cursor-dot .quote-dot {
 .social-link { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; transition: all 0.2s; }
 .social-link:hover { background: var(--accent); transform: translateY(-2px); }
 
-/* ===== DESKTOP NAV (hidden on mobile) ===== */
-.desktop-nav { display: flex; align-items: center; gap: 8px; list-style: none; }
+/* ===== DESKTOP NAV (replaced by the hamburger menu at all sizes) ===== */
+.desktop-nav { display: none; }
 .desktop-nav a {
     position: relative;
     padding: 10px 16px;
@@ -1693,9 +1693,3 @@ body.has-cursor-dot .quote-dot {
 .desktop-nav a:hover::after,
 .desktop-nav a.active::after { transform: scaleX(1); }
 
-@media (max-width: 900px) {
-    .desktop-nav { display: none; }
-}
-@media (min-width: 901px) {
-    .hamburger { display: none; }
-}
