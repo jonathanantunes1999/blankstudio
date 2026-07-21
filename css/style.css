@@ -200,7 +200,30 @@ body.menu-open .logo img {
                 visibility 0s;
 }
 
+/* Giant faint logo watermark behind the menu links, Vrrb-style */
+.menu-bg-mark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.9s var(--transition) 0.2s;
+}
+.menu-overlay.active .menu-bg-mark {
+    opacity: 0.06;
+}
+.menu-bg-mark img {
+    width: min(55vw, 640px);
+    height: auto;
+    filter: invert(1);
+}
+
 .menu-content {
+    position: relative;
+    z-index: 1;
     text-align: center;
 }
 
@@ -288,7 +311,8 @@ body.menu-open { overflow: hidden; }
     }
     .hamburger-line,
     .menu-item,
-    .menu-cta {
+    .menu-cta,
+    .menu-bg-mark {
         transition-duration: 0.15s !important;
         transition-delay: 0s !important;
     }
