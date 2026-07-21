@@ -108,6 +108,7 @@ function initHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger');
     const overlay = document.querySelector('.menu-overlay');
     const menuItems = document.querySelectorAll('.menu-item');
+    const bgVideo = overlay ? overlay.querySelector('.menu-bg-video') : null;
 
     if (!hamburger || !overlay) return;
 
@@ -116,6 +117,18 @@ function initHamburgerMenu() {
         overlay.classList.toggle('active', open);
         document.body.classList.toggle('menu-open', open);
         hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+        if (bgVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            if (open) {
+                if (bgVideo.preload === 'none') {
+                    bgVideo.preload = 'auto';
+                    bgVideo.load();
+                }
+                bgVideo.play().catch(() => {});
+            } else {
+                bgVideo.pause();
+            }
+        }
     }
 
     // Toggle on hamburger click

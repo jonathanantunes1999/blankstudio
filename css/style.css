@@ -223,11 +223,26 @@ body.menu-open .logo img {
     transition: opacity 0.9s var(--transition) 0.2s;
 }
 .menu-overlay.active .menu-bg-mark {
-    opacity: 0.09;
+    opacity: 1;
 }
 .menu-bg-mark img {
     width: min(55vw, 640px);
     height: auto;
+}
+
+/* Video clipped to the logo's letterforms, playing behind the menu links */
+.menu-bg-video {
+    width: min(55vw, 640px);
+    aspect-ratio: 73.146 / 67.688;
+    object-fit: cover;
+    -webkit-mask-image: url('../images/logo.svg');
+    mask-image: url('../images/logo.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
 }
 
 .menu-content {
