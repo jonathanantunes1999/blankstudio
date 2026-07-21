@@ -18,7 +18,41 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectsSlider();
     initQuoteSlider();
     initCursorDot();
+    initNavSideCtaContrast();
 });
+
+/* ===== NAV SIDE CTA CONTRAST ===== */
+/* The "Let's Talk" tab is fixed in place, so as the page scrolls it can end
+   up over a dark section (footer, quote slider, marquee). Flip its label to
+   light there so it stays readable. */
+function initNavSideCtaContrast() {
+    const cta = document.querySelector('.nav-side-cta');
+    if (!cta) return;
+
+    const darkSections = Array.from(document.querySelectorAll('.footer, .quote-slider, .marquee-band'));
+    if (!darkSections.length) return;
+
+    let ticking = false;
+
+    function update() {
+        const ctaRect = cta.getBoundingClientRect();
+        const onDark = darkSections.some(section => {
+            const r = section.getBoundingClientRect();
+            return r.top < ctaRect.bottom && r.bottom > ctaRect.top;
+        });
+        cta.classList.toggle('nav-side-cta--on-dark', onDark);
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(update);
+            ticking = true;
+        }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+}
 
 /* ===== CURSOR DOT - VRRB STYLE ===== */
 function initCursorDot() {

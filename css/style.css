@@ -153,6 +153,14 @@ body {
     color: var(--accent);
 }
 
+/* Flip the label to white when the fixed tab drifts over a dark section */
+.nav-side-cta--on-dark .nav-side-cta-label {
+    color: #f5f3ef;
+}
+.nav-side-cta--on-dark:hover .nav-side-cta-label {
+    color: var(--accent);
+}
+
 body.menu-open .nav-side-cta {
     opacity: 0;
     pointer-events: none;
