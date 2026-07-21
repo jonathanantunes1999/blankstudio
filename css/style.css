@@ -189,14 +189,14 @@ body.menu-open .logo img {
     justify-content: center;
     visibility: hidden;
     clip-path: circle(0% at calc(100% - 62px) 46px);
-    transition: clip-path 0.75s cubic-bezier(0.86, 0, 0.07, 1),
-                visibility 0s linear 0.75s;
+    transition: clip-path 1.25s cubic-bezier(0.86, 0, 0.07, 1),
+                visibility 0s linear 1.25s;
 }
 
 .menu-overlay.active {
     visibility: visible;
     clip-path: circle(150% at calc(100% - 62px) 46px);
-    transition: clip-path 0.75s cubic-bezier(0.86, 0, 0.07, 1),
+    transition: clip-path 1.25s cubic-bezier(0.86, 0, 0.07, 1),
                 visibility 0s;
 }
 
