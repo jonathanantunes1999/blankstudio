@@ -224,7 +224,7 @@ function initNavbarScroll() {
 
 /* ===== SCROLL REVEAL ===== */
 function initScrollReveal() {
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

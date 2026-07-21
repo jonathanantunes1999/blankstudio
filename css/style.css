@@ -1638,6 +1638,28 @@ textarea { min-height: 140px; resize: vertical; }
     transform: translateY(0);
 }
 
+/* Alternating slide-in from off-screen left/right, e.g. for capability rows */
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+    transition: opacity 0.9s var(--transition), transform 0.9s var(--transition);
+}
+.reveal-left { transform: translateX(-140px); }
+.reveal-right { transform: translateX(140px); }
+.reveal-left.visible,
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-left,
+    .reveal-right {
+        transform: none;
+        transition-duration: 0.15s;
+    }
+}
+
 /* ===== PARALLAX ===== */
 [data-parallax] { will-change: transform; }
 @media (prefers-reduced-motion: reduce) {
