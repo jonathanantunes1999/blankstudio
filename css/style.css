@@ -1347,12 +1347,14 @@ body.menu-open { overflow: hidden; }
     gap: 24px;
 }
 .portfolio-item {
+    display: block;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     aspect-ratio: 4/3;
     background: var(--bg-white);
+    text-decoration: none;
 }
 .portfolio-item img {
     width: 100%;
