@@ -447,6 +447,18 @@ function initProjectsSlider() {
             ticking = true;
         }
     }, { passive: true });
+
+    // Trackpads often send a tiny horizontal delta during an otherwise vertical
+    // swipe. Since this track scrolls horizontally, the browser would consume
+    // that gesture to snap between cards instead of letting the page scroll,
+    // making the page feel "stuck" here. Redirect vertical-dominant wheel
+    // gestures to the page itself; let clearly horizontal ones move the track.
+    track.addEventListener('wheel', (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            window.scrollBy({ top: e.deltaY, left: 0, behavior: 'auto' });
+        }
+    }, { passive: false });
 }
 
 /* ===== TESTIMONIAL / QUOTE SLIDER ===== */
