@@ -111,6 +111,14 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
+/* While the menu is open the navbar must stay transparent, whatever the
+   scroll state, so only the black overlay shows behind the logo/X */
+body.menu-open .navbar {
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom-color: transparent;
+}
+
 .logo img { height: 40px; width: auto; }
 
 /* Hamburger Button */
