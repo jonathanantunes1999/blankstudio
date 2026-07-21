@@ -322,7 +322,13 @@ function initBackToTop() {
 /* ===== FORM VALIDATION ===== */
 function initFormValidation() {
     document.querySelectorAll('form[data-validate]').forEach(form => {
+        const feedback = form.querySelector('.form-feedback');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const submitLabel = submitBtn ? submitBtn.textContent : '';
+
         form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
             let valid = true;
             form.querySelectorAll('[required]').forEach(field => {
                 if (!field.value.trim()) {
@@ -340,7 +346,47 @@ function initFormValidation() {
                 email.style.borderColor = '#ef4444';
             }
 
-            if (!valid) e.preventDefault();
+            if (!valid) return;
+            if (!form.action) return;
+
+            if (feedback) {
+                feedback.textContent = '';
+                feedback.className = 'form-feedback';
+            }
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'A enviar...';
+            }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        form.reset();
+                        if (feedback) {
+                            feedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contacto em breve.';
+                            feedback.className = 'form-feedback form-feedback--success';
+                        }
+                    } else {
+                        throw new Error(data.message || 'Erro ao enviar');
+                    }
+                })
+                .catch(() => {
+                    if (feedback) {
+                        feedback.textContent = 'Não foi possível enviar a mensagem. Tente novamente ou contacte-nos diretamente.';
+                        feedback.className = 'form-feedback form-feedback--error';
+                    }
+                })
+                .finally(() => {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = submitLabel;
+                    }
+                });
         });
     });
 }

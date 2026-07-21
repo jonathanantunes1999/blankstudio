@@ -126,26 +126,30 @@
                 <div class="reveal" style="transition-delay: 0.2s">
                     <div style="background: var(--bg); border-radius: 24px; padding: 40px;">
                         <h3 style="margin-bottom: 32px;">Dados do Projeto</h3>
-                        <form data-validate>
+                        <form data-validate novalidate action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="2b31e75a-0267-495a-863e-06e0bd05facb">
+                            <input type="hidden" name="subject" value="Novo Pedido de Orçamento - Blank Studio">
+                            <input type="hidden" name="from_name" value="Blank Studio - Website">
+                            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
                             <div class="form-group">
                                 <label>Nome *</label>
-                                <input type="text" placeholder="O seu nome completo" required>
+                                <input type="text" name="name" placeholder="O seu nome completo" required>
                             </div>
                             <div class="form-group">
                                 <label>Email *</label>
-                                <input type="email" placeholder="o.seu@email.pt" required>
+                                <input type="email" name="email" placeholder="o.seu@email.pt" required>
                             </div>
                             <div class="form-group">
                                 <label>Telefone *</label>
-                                <input type="tel" placeholder="+351 000 000 000" required>
+                                <input type="tel" name="phone" placeholder="+351 000 000 000" required>
                             </div>
                             <div class="form-group">
                                 <label>Nome da Empresa</label>
-                                <input type="text" placeholder="Nome da sua empresa">
+                                <input type="text" name="company" placeholder="Nome da sua empresa">
                             </div>
                             <div class="form-group">
                                 <label>Tipo de Projeto *</label>
-                                <select required>
+                                <select name="project_type" required>
                                     <option value="">Selecione...</option>
                                     <option value="website">Website Institucional</option>
                                     <option value="ecommerce">Loja Online (E-commerce)</option>
@@ -160,7 +164,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Orçamento Aproximado</label>
-                                <select>
+                                <select name="budget">
                                     <option value="">Selecione...</option>
                                     <option value="1500-3000">1.500€ - 3.000€</option>
                                     <option value="3000-5000">3.000€ - 5.000€</option>
@@ -171,9 +175,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Descrição do Projeto *</label>
-                                <textarea placeholder="Conte-nos mais sobre o seu projeto, objetivos e expectativas..." required></textarea>
+                                <textarea name="message" placeholder="Conte-nos mais sobre o seu projeto, objetivos e expectativas..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Enviar Pedido de Orçamento</button>
+                            <p class="form-feedback" aria-live="polite"></p>
                         </form>
                     </div>
                 </div>

@@ -1505,6 +1505,16 @@ textarea { min-height: 140px; resize: vertical; }
     color: var(--text-light);
 }
 
+.form-feedback {
+    margin-top: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1px;
+}
+.form-feedback--success { color: #16a34a; }
+.form-feedback--error { color: #ef4444; }
+
 /* ===== TAG ===== */
 .tag {
     display: inline-block;

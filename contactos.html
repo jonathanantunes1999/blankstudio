@@ -147,24 +147,29 @@
                 <div class="reveal" style="transition-delay: 0.2s">
                     <span class="section-label">Formulário</span>
                     <h2 style="margin-bottom: 40px;">Envie-nos uma mensagem</h2>
-                    <form data-validate>
+                    <form data-validate novalidate action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="2b31e75a-0267-495a-863e-06e0bd05facb">
+                        <input type="hidden" name="subject" value="Nova Mensagem de Contacto - Blank Studio">
+                        <input type="hidden" name="from_name" value="Blank Studio - Website">
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label>Nome</label>
-                            <input type="text" placeholder="O seu nome" required>
+                            <input type="text" name="name" placeholder="O seu nome" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="o.seu@email.pt" required>
+                            <input type="email" name="email" placeholder="o.seu@email.pt" required>
                         </div>
                         <div class="form-group">
                             <label>Telefone</label>
-                            <input type="tel" placeholder="+351 000 000 000">
+                            <input type="tel" name="phone" placeholder="+351 000 000 000">
                         </div>
                         <div class="form-group">
                             <label>Mensagem</label>
-                            <textarea placeholder="Como podemos ajudar?" required></textarea>
+                            <textarea name="message" placeholder="Como podemos ajudar?" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Enviar Mensagem</button>
+                        <p class="form-feedback" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
