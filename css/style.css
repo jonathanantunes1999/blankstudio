@@ -370,6 +370,23 @@ body.menu-open { overflow: hidden; }
     animation: hero-shape-ring-spin 22s linear infinite;
 }
 
+.hero-shape-logo {
+    position: absolute;
+    bottom: 6%;
+    right: 14%;
+    width: min(18vw, 220px);
+    height: min(18vw, 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0.16;
+}
+.hero-shape-logo img {
+    width: 42%;
+    height: auto;
+}
+
 @keyframes hero-shape-float {
     0%, 100% { transform: translate(0, 0) scale(1); }
     33% { transform: translate(3%, -6%) scale(1.06); }
