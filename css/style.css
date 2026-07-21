@@ -235,6 +235,20 @@ body.menu-open .logo img {
         justify-content: center;
         padding-right: 0;
     }
+    .menu-overlay {
+        justify-content: center;
+        padding-left: 0;
+    }
+    .menu-content {
+        text-align: center;
+    }
+    .menu-item::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .menu-bg-video {
+        opacity: 0.4;
+    }
 }
 
 /* Video clipped to the logo's letterforms, playing behind the menu links */
