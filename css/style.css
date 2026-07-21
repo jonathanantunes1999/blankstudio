@@ -186,7 +186,8 @@ body.menu-open .logo img {
     z-index: 1001;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: clamp(40px, 9vw, 160px);
     visibility: hidden;
     clip-path: circle(0% at calc(100% - 62px) 46px);
     transition: clip-path 1.25s cubic-bezier(0.86, 0, 0.07, 1),
@@ -218,13 +219,12 @@ body.menu-open .logo img {
 .menu-bg-mark img {
     width: min(55vw, 640px);
     height: auto;
-    filter: invert(1);
 }
 
 .menu-content {
     position: relative;
     z-index: 1;
-    text-align: center;
+    text-align: left;
 }
 
 .menu-item {
@@ -256,17 +256,16 @@ body.menu-open .logo img {
 .menu-overlay.active .menu-item:nth-child(5) { transition-delay: 0.43s; }
 .menu-overlay.active .menu-item:nth-child(6) { transition-delay: 0.50s; }
 
-/* Animated underline sweeping in from the centre */
+/* Animated underline sweeping in from the left edge of the word */
 .menu-item::after {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0.12em;
     width: 0;
     height: 3px;
     background: var(--accent);
     border-radius: 3px;
-    transform: translateX(-50%);
     transition: width 0.4s var(--transition-bounce);
 }
 
