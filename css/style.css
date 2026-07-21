@@ -214,7 +214,7 @@ body.menu-open .logo img {
     transition: opacity 0.9s var(--transition) 0.2s;
 }
 .menu-overlay.active .menu-bg-mark {
-    opacity: 0.06;
+    opacity: 0.045;
 }
 .menu-bg-mark img {
     width: min(55vw, 640px);
