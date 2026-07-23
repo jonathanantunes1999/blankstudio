@@ -1328,6 +1328,7 @@ body.menu-open { overflow: hidden; }
     .hero { padding: 120px 24px 60px; }
     .navbar { padding: 20px 24px; }
     .navbar.scrolled { padding: 14px 24px; }
+    .hero-dot-5, .hero-dot-7 { display: none; }
 }
 
 /* ===== STATS ===== */
