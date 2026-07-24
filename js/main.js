@@ -321,6 +321,17 @@ function initBackToTop() {
 
 /* ===== FORM VALIDATION ===== */
 function initFormValidation() {
+    const isEnglish = document.documentElement.lang === 'en';
+    const strings = isEnglish ? {
+        sending: 'Sending...',
+        success: 'Message sent successfully! We\'ll be in touch shortly.',
+        error: 'Could not send the message. Please try again or contact us directly.'
+    } : {
+        sending: 'A enviar...',
+        success: 'Mensagem enviada com sucesso! Entraremos em contacto em breve.',
+        error: 'Não foi possível enviar a mensagem. Tente novamente ou contacte-nos diretamente.'
+    };
+
     document.querySelectorAll('form[data-validate]').forEach(form => {
         const feedback = form.querySelector('.form-feedback');
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -355,7 +366,7 @@ function initFormValidation() {
             }
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.textContent = 'A enviar...';
+                submitBtn.textContent = strings.sending;
             }
 
             fetch(form.action, {
@@ -368,7 +379,7 @@ function initFormValidation() {
                     if (data.success) {
                         form.reset();
                         if (feedback) {
-                            feedback.textContent = 'Mensagem enviada com sucesso! Entraremos em contacto em breve.';
+                            feedback.textContent = strings.success;
                             feedback.className = 'form-feedback form-feedback--success';
                         }
                     } else {
@@ -377,7 +388,7 @@ function initFormValidation() {
                 })
                 .catch(() => {
                     if (feedback) {
-                        feedback.textContent = 'Não foi possível enviar a mensagem. Tente novamente ou contacte-nos diretamente.';
+                        feedback.textContent = strings.error;
                         feedback.className = 'form-feedback form-feedback--error';
                     }
                 })
