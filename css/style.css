@@ -393,6 +393,26 @@ body.menu-open .logo img {
     transform: translateY(0);
 }
 
+.menu-lang-switch { margin-top: 22px; }
+.menu-lang-switch a {
+    display: inline-block;
+    color: #f5f3ef;
+    opacity: 0.6;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border: 1px solid rgba(245, 243, 239, 0.3);
+    padding: 7px 16px;
+    border-radius: 20px;
+    transition: opacity 0.3s var(--transition), border-color 0.3s var(--transition), color 0.3s var(--transition);
+}
+.menu-lang-switch a:hover {
+    opacity: 1;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 /* Mobile: centre everything (placed after the rules above so it wins the cascade) */
 @media (max-width: 768px) {
     .menu-bg-mark {
