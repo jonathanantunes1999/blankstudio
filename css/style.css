@@ -1828,6 +1828,12 @@ body.has-cursor-dot .quote-dot {
 .article-toc a { color: var(--text-light); font-size: 0.9375rem; }
 .article-toc a:hover { color: var(--accent); }
 
+.article-layout { display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; max-width: 980px; margin: 0 auto; }
+@media (max-width: 860px) {
+    .article-layout { grid-template-columns: 1fr; }
+    .article-toc { position: static !important; }
+}
+
 /* ===== BLOG CARD ===== */
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr)); gap: 32px; }
 .blog-card { display: block; text-decoration: none; color: inherit; background: var(--bg-white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.4s var(--transition); }
