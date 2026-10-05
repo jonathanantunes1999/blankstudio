@@ -24,6 +24,7 @@
     <link rel="apple-touch-icon" href="images/favicon/favicon-180.png">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Saltar para o conteúdo</a>
     <!-- Splashscreen -->
     <div class="splashscreen">
         <div class="splash-logo"><img src="images/logo.svg" alt="Blank Studio"></div>
@@ -77,7 +78,7 @@
         </div>
     </div>
 
-    <section class="hero hero-sub">
+    <section id="main-content" class="hero hero-sub">
         <div class="hero-shape" aria-hidden="true"></div>
         <div class="ambient-dot ambient-dot--a" style="top: 22%; right: 18%;" aria-hidden="true"></div>
         <div class="ambient-dot ambient-dot--b" style="top: 65%; right: 30%;" aria-hidden="true"></div>
@@ -141,20 +142,20 @@
                         <input type="hidden" name="from_name" value="Blank Studio - Website">
                         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
-                            <label>Nome</label>
-                            <input type="text" name="name" placeholder="O seu nome" required>
+                            <label for="contact-name">Nome</label>
+                            <input type="text" id="contact-name" name="name" placeholder="O seu nome" required>
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" placeholder="o.seu@email.pt" required>
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" placeholder="o.seu@email.pt" required>
                         </div>
                         <div class="form-group">
-                            <label>Telefone</label>
-                            <input type="tel" name="phone" placeholder="+351 000 000 000">
+                            <label for="contact-phone">Telefone</label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="+351 000 000 000">
                         </div>
                         <div class="form-group">
-                            <label>Mensagem</label>
-                            <textarea name="message" placeholder="Como podemos ajudar?" required></textarea>
+                            <label for="contact-message">Mensagem</label>
+                            <textarea id="contact-message" name="message" placeholder="Como podemos ajudar?" required></textarea>
                         </div>
                         <div class="form-consent">
                             <input type="checkbox" id="consent-contactos" name="consent" required>

@@ -237,14 +237,42 @@ function initScrollReveal() {
 
 /* ===== FAQ ===== */
 function initFAQ() {
-    document.querySelectorAll('.faq-item').forEach(item => {
+    const items = document.querySelectorAll('.faq-item');
+
+    function setExpanded(item, expanded) {
         const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        item.classList.toggle('active', expanded);
+        if (question) question.setAttribute('aria-expanded', String(expanded));
+        if (answer) answer.setAttribute('aria-hidden', String(!expanded));
+    }
+
+    items.forEach((item, index) => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
         if (!question) return;
 
-        question.addEventListener('click', function() {
+        question.setAttribute('role', 'button');
+        question.setAttribute('tabindex', '0');
+        if (answer) {
+            const answerId = answer.id || `faq-answer-${index}-${Math.random().toString(36).slice(2, 8)}`;
+            answer.id = answerId;
+            question.setAttribute('aria-controls', answerId);
+        }
+        setExpanded(item, item.classList.contains('active'));
+
+        function toggle() {
             const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
+            items.forEach(i => setExpanded(i, false));
+            if (!isActive) setExpanded(item, true);
+        }
+
+        question.addEventListener('click', toggle);
+        question.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
         });
     });
 }
