@@ -777,54 +777,6 @@ body.menu-open { overflow: hidden; }
 .hero-mini-stats .stat-item { text-align: left; }
 .hero-mini-stats .stat-number { font-size: clamp(1.75rem, 3vw, 2.5rem); }
 
-/* Scroll hint, bottom-center */
-.scroll-hint {
-    position: absolute;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-.scroll-hint-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--text-muted);
-    writing-mode: vertical-rl;
-}
-.scroll-hint-line {
-    width: 1px;
-    height: 48px;
-    background: var(--border);
-    position: relative;
-    overflow: hidden;
-}
-.scroll-hint-line::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--accent);
-    animation: scroll-hint-drop 1.8s ease-in-out infinite;
-}
-@keyframes scroll-hint-drop {
-    0% { top: -100%; }
-    60% { top: 100%; }
-    100% { top: 100%; }
-}
-@media (prefers-reduced-motion: reduce) {
-    .scroll-hint-line::after { animation: none; top: 0; }
-}
-@media (max-width: 640px) {
-    .scroll-hint { display: none; }
-}
-
 /* ===== SECTIONS ===== */
 .section {
     padding: 120px 40px;
