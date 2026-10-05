@@ -253,4 +253,16 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://blankstudios.pt/en/importancia-branding-digital.html" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://blankstudios.pt/importancia-branding-digital.html" />
     </url>
+    <url>
+        <loc>https://blankstudios.pt/design-branding.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://blankstudios.pt/design-branding.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blankstudios.pt/en/design-branding.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://blankstudios.pt/design-branding.html" />
+    </url>
+    <url>
+        <loc>https://blankstudios.pt/en/design-branding.html</loc>
+        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://blankstudios.pt/design-branding.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://blankstudios.pt/en/design-branding.html" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://blankstudios.pt/design-branding.html" />
+    </url>
 </urlset>
