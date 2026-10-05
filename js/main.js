@@ -213,13 +213,15 @@ function initNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
 
+    let ticking = false;
     window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+            ticking = false;
+        });
+    }, { passive: true });
 }
 
 /* ===== SCROLL REVEAL ===== */
@@ -338,13 +340,15 @@ function initBackToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 500) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
-    });
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            btn.classList.toggle('visible', window.pageYOffset > 500);
+            ticking = false;
+        });
+    }, { passive: true });
 }
 
 /* ===== FORM VALIDATION ===== */
