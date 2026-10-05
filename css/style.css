@@ -1512,6 +1512,7 @@ textarea { min-height: 140px; resize: vertical; }
     color: var(--text-muted);
     margin-bottom: 32px;
 }
+.breadcrumb a { color: var(--text-muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--accent); }
 
 /* ===== FOOTER ===== */
