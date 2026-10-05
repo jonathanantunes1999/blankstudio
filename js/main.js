@@ -482,12 +482,16 @@ function initParallax() {
 
     function update() {
         const viewportH = window.innerHeight;
-        items.forEach(el => {
+        // Read every element's position first, then write all transforms —
+        // interleaving reads and writes forces a synchronous layout per item.
+        const offsets = Array.from(items).map(el => {
             const speed = parseFloat(el.dataset.parallax) || 0.1;
             const rect = el.getBoundingClientRect();
             const center = rect.top + rect.height / 2;
-            const offset = (viewportH / 2 - center) * speed;
-            el.style.transform = `translateY(${offset}px)`;
+            return (viewportH / 2 - center) * speed;
+        });
+        items.forEach((el, i) => {
+            el.style.transform = `translateY(${offsets[i]}px)`;
         });
         ticking = false;
     }
