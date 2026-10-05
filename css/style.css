@@ -1480,6 +1480,25 @@ textarea { min-height: 140px; resize: vertical; }
     color: var(--text-light);
 }
 
+.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 0.8125rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+.form-consent input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--accent);
+}
+.form-consent a { color: var(--accent); }
+.form-consent--error label { color: #ef4444; }
+
 .form-feedback {
     margin-top: 16px;
     font-size: 0.875rem;

@@ -342,12 +342,20 @@ function initFormValidation() {
 
             let valid = true;
             form.querySelectorAll('[required]').forEach(field => {
-                if (!field.value.trim()) {
+                const filled = field.type === 'checkbox' ? field.checked : field.value.trim();
+                if (!filled) {
                     valid = false;
-                    field.style.borderColor = '#ef4444';
-                    field.addEventListener('input', function() {
-                        if (this.value.trim()) this.style.borderColor = '';
-                    }, { once: true });
+                    if (field.type === 'checkbox') {
+                        field.closest('.form-consent')?.classList.add('form-consent--error');
+                        field.addEventListener('change', function() {
+                            if (this.checked) this.closest('.form-consent')?.classList.remove('form-consent--error');
+                        }, { once: true });
+                    } else {
+                        field.style.borderColor = '#ef4444';
+                        field.addEventListener('input', function() {
+                            if (this.value.trim()) this.style.borderColor = '';
+                        }, { once: true });
+                    }
                 }
             });
 
