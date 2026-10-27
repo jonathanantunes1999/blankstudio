@@ -1775,6 +1775,7 @@ body.has-cursor-dot .quote-dot {
     transition: box-shadow 0.4s var(--transition);
 }
 .team-member:hover .team-avatar { box-shadow: 0 20px 40px -12px rgba(0,0,0,0.3); }
+.team-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
 /* ===== FILTER BUTTONS ===== */
 .filter-buttons {
